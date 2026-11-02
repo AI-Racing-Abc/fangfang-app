@@ -2721,6 +2721,15 @@ body.pwa .sb,body.pwa .hi{display:none}
       navigator.serviceWorker.register('sw.js').then(function(reg){
         try { reg.update(); } catch(e){}
       }).catch(function(){});
+      /* 已有旧缓存被新版本接管时，自动刷新一次，确保马上看到新版 */
+      if (navigator.serviceWorker.controller) {
+        var reloaded = false;
+        navigator.serviceWorker.addEventListener('controllerchange', function(){
+          if (reloaded) return;
+          reloaded = true;
+          setTimeout(function(){ location.reload(); }, 60);
+        });
+      }
     });
   }
 })();
