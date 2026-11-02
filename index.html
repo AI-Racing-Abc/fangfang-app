@@ -1,0 +1,2697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>芳芳 · 命理情感陪伴</title>
+<meta name="theme-color" content="#3B2A9E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="芳芳">
+<meta name="description" content="芳芳 · 命理测算 × 情感咨询 × 心灵疗愈">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+/* ================= 基础 ================= */
+:root{
+  --p-deep:#3B2A9E; --p1:#6C4DF6; --p2:#8B5CF6; --p3:#B36BFF;
+  --pink:#FF6FA5; --gold:#FFB84D; --red:#FF5A3C; --green:#12B76A;
+  --bg:#F6F5FB; --ink:#1B1333; --sub:#8A83A6; --line:#EFEBF7;
+  --doc-bg:#F3F1F9; --doc-card:#FFFFFF; --doc-ink:#241B45; --doc-sub:#7A7199;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;background:var(--doc-bg);color:var(--doc-ink);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+button:active{transform:scale(.97)}
+.doc{max-width:1280px;margin:0 auto;padding:0 30px 90px}
+.hero{padding:56px 0 34px}
+.hero .kicker{font-size:12.5px;font-weight:800;letter-spacing:2.5px;color:#8B5CF6}
+.hero h1{font-size:40px;font-weight:800;letter-spacing:-.5px;margin-top:10px;line-height:1.15}
+.hero h1 span{background:linear-gradient(120deg,#6C4DF6,#B36BFF 60%,#FF6FA5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:15px;color:var(--doc-sub);margin-top:14px;max-width:820px;line-height:1.8}
+.hero .meta{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+.mchip{font-size:12px;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid #E4DEF3;color:#5C5480;font-weight:600}
+.mchip.live{background:linear-gradient(135deg,#6C4DF6,#8B5CF6);color:#fff;border-color:transparent}
+.toc{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.toc a{font-size:12.5px;font-weight:600;color:#5C5480;background:#fff;border:1px solid #E4DEF3;padding:7px 15px;border-radius:999px;transition:.15s}
+.toc a:hover{border-color:#8B5CF6;color:#6C4DF6}
+section{margin-top:52px}
+.sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:20px}
+.sec-h .no{font-size:13px;font-weight:800;color:#8B5CF6;letter-spacing:1.5px}
+.sec-h h2{font-size:23px;font-weight:800;letter-spacing:-.3px}
+.sec-h .en{font-size:12px;color:#A79FC9;font-weight:700;letter-spacing:.8px}
+.panel{background:var(--doc-card);border:1px solid #E9E4F6;border-radius:22px;padding:28px}
+.panel+.panel{margin-top:16px}
+.panel h3{font-size:15.5px;font-weight:800;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.panel h3::before{content:"";width:4px;height:15px;border-radius:3px;background:linear-gradient(180deg,#8B5CF6,#B36BFF)}
+.panel p{font-size:13.5px;line-height:1.9;color:#5C5480}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.mini-card{background:#FAF8FF;border:1px solid #ECE6F9;border-radius:16px;padding:18px}
+.mini-card .ic{font-size:24px}
+.mini-card b{display:block;font-size:14.5px;font-weight:800;margin:8px 0 6px}
+.mini-card p{font-size:12px;line-height:1.7;color:#7A7199}
+.tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.tbl th{background:#F6F3FD;color:#5C5480;font-weight:700;text-align:left;padding:10px 12px;border-bottom:1px solid #E9E4F6;white-space:nowrap}
+.tbl td{padding:10px 12px;border-bottom:1px solid #F0EBF9;color:#5C5480;line-height:1.6;vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td b{color:#3A2F6B}
+.pill{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 9px;border-radius:999px;background:#EFEAFC;color:#6C4DF6;margin-right:4px}
+.tree{font-size:13px;line-height:2.0;color:#4A3F75;column-count:2;column-gap:40px}
+.tree ul{list-style:none;padding-left:20px;position:relative}
+.tree>ul{padding-left:0}
+.tree li{position:relative;padding-left:18px}
+.tree li::before{content:"";position:absolute;left:0;top:12px;width:12px;height:1px;background:#CFC6E8}
+.tree ul ul::before{content:"";position:absolute;left:0;top:0;bottom:8px;width:1px;background:#CFC6E8}
+.tree .root{font-weight:800;color:#3B2A9E;font-size:14px;padding-left:0}
+.tree .root::before{display:none}
+.tree .root .lg{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,#6C4DF6,#B36BFF);color:#fff;font-size:12px;margin-right:7px;vertical-align:-4px}
+.tree .t2{font-weight:700;color:#5C4BA8}
+.sw-row{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.sw{border-radius:14px;overflow:hidden;border:1px solid #ECE6F9;background:#fff}
+.sw .c{height:56px}
+.sw .t{padding:8px 10px;font-size:11px;font-weight:700;color:#3A2F6B}
+.sw .t small{display:block;font-weight:500;color:#A79FC9;font-size:9.5px;margin-top:1px}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:4px}
+.fnode{background:#F6F3FD;border:1px solid #E4DDF5;border-radius:12px;padding:9px 14px;font-size:12px;font-weight:700;color:#4A3F75;white-space:nowrap}
+.fnode.hot{background:linear-gradient(135deg,#6C4DF6,#8B5CF6);color:#fff;border-color:transparent}
+.fnode.pay{background:linear-gradient(135deg,#FF8A3C,#FF5A3C);color:#fff;border-color:transparent}
+.farr{color:#B9B1D6;font-weight:800;font-size:13px}
+.flow-cap{font-size:12px;color:#A79FC9;font-weight:700;margin:16px 0 8px;letter-spacing:.5px}
+.foot{margin-top:60px;text-align:center;font-size:11.5px;color:#A79FC9;line-height:2}
+.foot b{color:#6C4DF6}
+
+/* ================= 交互原型舞台 ================= */
+.stage{display:flex;gap:34px;align-items:flex-start;margin-top:8px}
+.stage-l{flex-shrink:0}
+.pouter{width:375px;height:790px;position:relative}
+.phone{width:395px;height:834px;background:#0E0E16;border-radius:58px;padding:11px;position:absolute;top:0;left:0;transform:scale(.92);transform-origin:top left;box-shadow:0 26px 60px rgba(35,22,90,.30),0 3px 10px rgba(35,22,90,.18)}
+.phone::after{content:"";position:absolute;top:24px;left:50%;transform:translateX(-50%);width:106px;height:27px;background:#0E0E16;border-radius:20px;z-index:80}
+.scr{width:373px;height:812px;border-radius:47px;overflow:hidden;position:relative;background:#fff;display:none;flex-direction:column;isolation:isolate}
+.scr.act{display:flex}
+.scr.anime{animation:scrIn .28s cubic-bezier(.2,.8,.3,1)}
+@keyframes scrIn{from{transform:translateX(46px);opacity:.4}}
+.scr.anime-back{animation:scrBack .28s cubic-bezier(.2,.8,.3,1)}
+@keyframes scrBack{from{transform:translateX(-46px);opacity:.4}}
+.sb{position:absolute;top:0;left:0;right:0;height:50px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 28px 7px;font-size:13.5px;font-weight:600;z-index:35;pointer-events:none;color:var(--ink)}
+.sb.lt{color:#fff}
+.sbi{display:inline-flex;gap:5px;align-items:center}
+.hi{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:118px;height:5px;border-radius:3px;background:rgba(10,6,30,.85);z-index:70}
+.hi.lt{background:rgba(255,255,255,.92)}
+
+/* 底部导航 */
+.nav{position:absolute;bottom:0;left:0;right:0;height:82px;background:rgba(255,255,255,.97);border-top:1px solid var(--line);display:flex;align-items:flex-start;padding:11px 4px 0;z-index:45}
+.nav .it{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10px;color:#A49CBE;font-weight:500;background:none;border:none}
+.nav .it svg{width:23px;height:23px}
+.nav .it.on{color:#F2822F;font-weight:700}
+.nav .plus{flex:1;display:flex;justify-content:center;background:none;border:none}
+.nav .plus b{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);color:#fff;display:grid;place-items:center;font-size:25px;font-weight:300;box-shadow:0 8px 18px rgba(255,106,60,.42);margin-top:-17px;border:3px solid #fff}
+
+/* ================= 01 开屏 ================= */
+.sp{background:linear-gradient(168deg,#2A1B6E 0%,#4F35C9 42%,#7B54E8 72%,#A96BFF 100%);color:#fff;align-items:center;justify-content:space-between;padding:76px 0 52px}
+.sp-star{position:absolute;background:#fff;border-radius:50%;z-index:1}
+.sp-tet{position:absolute;color:#FFE9A8;z-index:1;font-size:13px}
+.sp-mid{display:flex;flex-direction:column;align-items:center;z-index:2}
+.sp-name{font-size:46px;font-weight:800;letter-spacing:8px;margin-top:22px;text-indent:8px}
+.sp-en{font-size:11.5px;letter-spacing:7px;opacity:.72;font-weight:700;margin-top:8px;text-indent:7px}
+.sp-slo{margin-top:16px;font-size:13.5px;opacity:.88;letter-spacing:3px}
+.sp-bot{display:flex;flex-direction:column;align-items:center;gap:16px;z-index:2}
+.sp-gift{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);padding:9px 18px;border-radius:999px;font-size:12px;letter-spacing:.5px}
+.sp-skip{position:absolute;top:60px;right:22px;font-size:12px;opacity:.85;border:1px solid rgba(255,255,255,.4);padding:4px 13px;border-radius:999px;z-index:3;background:none;color:#fff}
+.sp-ver{position:absolute;bottom:26px;font-size:9.5px;opacity:.5;letter-spacing:1px}
+
+/* ================= 02 首页 ================= */
+.hm-top{background:linear-gradient(158deg,#5B3FD9 0%,#7B5CF0 52%,#A78BFA 100%);padding:58px 16px 16px;border-radius:0 0 28px 28px;color:#fff;position:relative;flex-shrink:0}
+.hm-brandrow{display:flex;justify-content:space-between;align-items:flex-start}
+.hm-logo{display:flex;gap:9px;align-items:center}
+.hm-logo .lm{width:36px;height:36px;border-radius:12px;background:#fff;color:#6C4DF6;display:grid;place-items:center;font-weight:800;font-size:18px;box-shadow:0 4px 12px rgba(30,15,90,.25)}
+.hm-logo b{font-size:17px;font-weight:800;letter-spacing:1px;display:block}
+.hm-logo small{font-size:9.5px;opacity:.78;letter-spacing:1.5px}
+.hm-mascot{position:relative;width:58px;background:none;border:none}
+.hm-mascot .free{position:absolute;top:-2px;right:-4px;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);font-size:8.5px;font-weight:800;padding:2px 6px;border-radius:6px;font-style:normal;box-shadow:0 3px 8px rgba(255,90,60,.4)}
+.hm-chips{display:flex;gap:8px;margin:14px 0 12px}
+.hm-chips span{flex:1;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.30);border-radius:12px;padding:8px 0;text-align:center;font-size:12.5px;font-weight:600;letter-spacing:.5px}
+.hm-search{background:#fff;border-radius:999px;height:44px;display:flex;align-items:center;padding:0 5px 0 16px;color:#A49CBE;font-size:13px;box-shadow:0 8px 18px rgba(40,20,110,.22);width:100%;border:none;text-align:left}
+.hm-search .go{margin-left:auto;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);color:#fff;display:grid;place-items:center;font-size:13px}
+.hm-body{flex:1;padding:2px 0 90px;overflow:hidden}
+.hm-two{display:flex;gap:10px;padding:12px 16px 0}
+.hm-card{flex:1;border-radius:16px;padding:12px 12px 14px;color:#fff;position:relative;overflow:hidden;min-height:74px;border:none;text-align:left}
+.hm-card.blue{background:linear-gradient(135deg,#4F8CFF,#7DB9FF)}
+.hm-card.green{background:linear-gradient(135deg,#14B87E,#55D8A6)}
+.hm-card b{font-size:14px;font-weight:800;letter-spacing:.5px}
+.hm-card small{display:block;font-size:10px;opacity:.88;margin-top:4px}
+.hm-card i{position:absolute;right:10px;top:12px;font-size:19px;opacity:.55;font-style:normal}
+.hm-grid{display:flex;padding:14px 8px 0}
+.hg{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;position:relative;background:none;border:none}
+.hg .hgi{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-size:20px;background:#F0ECFB}
+.hg small{font-size:10.5px;color:#5C5480;font-weight:600}
+.hg .nb{position:absolute;top:-5px;right:6px;background:#FF5A3C;color:#fff;font-size:8px;padding:1.5px 5px;border-radius:6px;font-weight:800;font-style:normal;box-shadow:0 2px 6px rgba(255,90,60,.4)}
+.hm-sec{padding:16px 16px 0}
+.hm-sech{display:flex;align-items:center;gap:8px;margin-bottom:11px}
+.hm-sech b{font-size:15px;font-weight:800;letter-spacing:.3px}
+.hm-sech em{background:linear-gradient(135deg,#FF5A5F,#FF8A3C);color:#fff;font-style:normal;font-size:9px;padding:3px 7px;border-radius:6px;font-weight:700;letter-spacing:.3px}
+.hm-sech>i{margin-left:auto;color:#C9C2DE;font-style:normal;font-size:15px}
+.hm-fchips{display:flex;gap:6px;margin-left:auto}
+.hm-fchips span{font-size:9.5px;padding:4px 9px;border-radius:999px;background:#F1EEF9;color:#6E6890;font-weight:600}
+.hm-fchips .on{background:linear-gradient(135deg,#FFE9C2,#FFD9A0);color:#8A5A12;font-weight:800;border:1px solid #F2C078}
+.hm-lives{display:flex;gap:10px}
+.lv{flex:1;height:168px;border-radius:16px;padding:10px;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;border:none;text-align:left}
+.lv1{background:linear-gradient(165deg,#9A66F2 0%,#5B3FD9 58%,#38268F 100%)}
+.lv2{background:linear-gradient(165deg,#FF9A5C 0%,#FF6FA5 52%,#A96BFF 100%)}
+.lv-b{align-self:flex-start;background:rgba(0,0,0,.34);font-size:8.5px;padding:3px 7px;border-radius:6px;display:flex;gap:4px;align-items:center;font-weight:600;letter-spacing:.2px}
+.lv b{font-size:16px;line-height:1.28;margin-top:9px;font-weight:800}
+.lv-t{display:flex;align-items:center;gap:5px;font-size:9px;margin-top:auto;opacity:.95}
+.lv-t .av{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.28);display:grid;place-items:center;font-size:9px;font-weight:700}
+.lv small{display:block;font-size:9px;opacity:.82;margin-top:5px;line-height:1.4}
+.hm-tgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tcard{background:#fff;border-radius:16px;padding:12px;position:relative;box-shadow:0 8px 18px rgba(31,20,80,.07);min-height:158px;border:none;text-align:left}
+.tcard .av{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#B36BFF,#6C4DF6);color:#fff;display:grid;place-items:center;font-size:18px;font-weight:800;position:relative}
+.tcard .dot{position:absolute;right:1px;bottom:1px;width:11px;height:11px;border-radius:50%;background:#19C37D;border:2px solid #fff}
+.tcard .dot.off{background:#C9C2DE}
+.tcard-nm{font-size:13px;font-weight:800;margin-top:8px;display:flex;align-items:center;gap:4px}
+.tcard-nm em{font-style:normal;font-size:9px;color:#F5A623;font-weight:800}
+.tcard-mt{font-size:9px;color:#8A83A6;margin-top:2px;line-height:1.45}
+.tcard-pr{margin-top:7px;font-size:16px;font-weight:800;color:#FF5A3C;font-variant-numeric:tabular-nums}
+.tcard-pr b{font-size:9.5px;font-weight:800}
+.tcard-pr small{font-size:9px;color:#8A83A6;font-weight:500;margin-left:2px}
+.tcard .btn{position:absolute;right:10px;bottom:10px;font-size:10px;font-weight:800;padding:6px 13px;border-radius:999px;border:none;font-family:inherit}
+
+/* ================= 03 心灵页 ================= */
+.so-head{background:linear-gradient(150deg,#4F8CFF 0%,#7B5CFF 55%,#9E6BFF 100%);padding:58px 16px 22px;color:#fff;border-radius:0 0 28px 28px;flex-shrink:0}
+.so-hrow{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:800;letter-spacing:.5px}
+.so-hrow i{font-style:normal;font-size:16px;opacity:.9;background:none;border:none;color:#fff}
+.so-scores{display:flex;justify-content:space-between;align-items:center;margin-top:16px;gap:12px}
+.so-bars{flex:1;display:flex;flex-direction:column;gap:9px}
+.sbar{display:flex;align-items:center;gap:8px;font-size:11px}
+.sbar span{width:28px;font-weight:600;opacity:.95}
+.sbar .tr{flex:1;height:7px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden}
+.sbar .fi{height:100%;border-radius:4px}
+.sbar b{width:20px;font-size:11.5px;font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.ring{width:88px;height:88px;border-radius:50%;background:conic-gradient(#8BE9FF 0 78%,rgba(255,255,255,.22) 78% 100%);display:grid;place-items:center;flex-shrink:0}
+.ring-in{width:70px;height:70px;border-radius:50%;background:#5646C9;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-in b{font-size:23px;font-weight:800;line-height:1}
+.ring-in small{font-size:8px;opacity:.85;margin-top:3px;letter-spacing:.5px}
+.so-body{flex:1;padding:0 0 92px;overflow:hidden}
+.so-banner{background:linear-gradient(115deg,#E2F6E8,#C4EBD4);border-radius:16px;padding:13px 14px;display:flex;justify-content:space-between;align-items:center;margin:12px 16px 0;color:#17583E;position:relative;overflow:hidden;width:calc(100% - 32px);border:none;text-align:left}
+.so-banner b{font-size:13.5px;font-weight:800;letter-spacing:.3px}
+.so-banner small{display:block;font-size:10px;opacity:.75;margin-top:3px}
+.btn-mini{margin-top:8px;display:inline-block;background:linear-gradient(135deg,#FFD98A,#FFB84D);color:#7A4E0E;font-size:10px;font-weight:800;padding:5px 14px;border-radius:999px;box-shadow:0 4px 10px rgba(255,184,77,.35)}
+.so-banner .ill{font-size:38px;filter:drop-shadow(0 6px 10px rgba(20,90,60,.2))}
+.so-tabs{display:flex;gap:22px;padding:16px 16px 0;font-size:14px;font-weight:600;color:#A79FC9}
+.so-tabs .on{color:#241B45;font-weight:800;position:relative}
+.so-tabs .on::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-6px;width:16px;height:3px;border-radius:2px;background:linear-gradient(90deg,#6C4DF6,#B36BFF)}
+.so-tabs span{background:none;border:none;font-size:14px;font-weight:600;color:#A79FC9;font-family:inherit}
+.so-tabs span.on{color:#241B45;font-weight:800}
+.post{background:#fff;border-radius:16px;padding:13px 14px;margin:12px 16px 0;box-shadow:0 6px 16px rgba(31,20,80,.05)}
+.p-hd{display:flex;align-items:center;gap:9px}
+.p-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#B36BFF,#6C4DF6);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.p-hd b{font-size:12.5px;font-weight:800;display:block}
+.p-hd small{font-size:9.5px;color:#A79FC9}
+.p-hd i{margin-left:auto;color:#C9C2DE;font-style:normal;letter-spacing:1px}
+.post p{font-size:13px;line-height:1.6;margin-top:9px;color:#3A2F6B}
+.p-tag{display:inline-block;margin-top:9px;font-size:9.5px;font-weight:700;color:#8A5A12;background:#FFF1CC;padding:3px 9px;border-radius:6px}
+.p-ft{display:flex;gap:16px;margin-top:11px;font-size:10.5px;color:#A79FC9;font-weight:600}
+.p-ft span{background:none;border:none;color:#A79FC9;font-weight:600;font-size:10.5px;padding:0}
+.p-ft span.liked{color:#FF5A3C;font-weight:800}
+
+/* ================= 04/05 弹窗 ================= */
+.pp{background:rgba(22,14,56,.74);align-items:center;justify-content:center;padding:0 26px;position:absolute;inset:0;z-index:60}
+.pp-card{background:#fff;border-radius:26px;overflow:hidden;width:100%;position:relative;box-shadow:0 30px 70px rgba(10,5,40,.45);animation:popIn .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes popIn{from{transform:scale(.85);opacity:0}}
+.pp-ill{height:168px;position:relative;overflow:hidden}
+.pp-close{position:absolute;top:64px;right:44px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.45);color:#fff;display:grid;place-items:center;font-size:13px;z-index:5}
+.pp-body{padding:22px 22px 26px;text-align:center}
+.pp-body .t1{font-size:21px;font-weight:800;color:#241B45;letter-spacing:.5px}
+.pp-body .t2{font-size:26px;font-weight:800;background:linear-gradient(120deg,#6C4DF6,#B36BFF);-webkit-background-clip:text;background-clip:text;color:transparent;margin-top:2px;letter-spacing:1px}
+.pp-body .t3{font-size:12px;color:#8A83A6;line-height:1.7;margin-top:10px}
+.pp-avs{display:flex;align-items:center;justify-content:center;gap:8px;margin:16px 0 4px}
+.pp-avs .av{width:30px;height:30px;border-radius:50%;border:2px solid #fff;display:grid;place-items:center;color:#fff;font-size:11px;font-weight:800}
+.pp-avs span{font-size:10.5px;color:#8A83A6;margin-left:2px}
+.pp-cta{margin-top:14px;width:100%;border:none;font-family:inherit;height:50px;border-radius:999px;background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff;font-size:15px;font-weight:800;letter-spacing:1px;box-shadow:0 12px 26px rgba(108,77,246,.4);position:relative}
+.pp-cta .bd{position:absolute;top:-9px;right:14px;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);font-size:8.5px;font-weight:800;padding:2.5px 8px;border-radius:999px;box-shadow:0 4px 10px rgba(255,90,60,.4);letter-spacing:.5px}
+.pp-note{margin-top:14px;font-size:10px;color:#A79FC9;letter-spacing:.5px}
+.pp-note b{color:#6C4DF6}
+
+/* ================= 06 测验答题 ================= */
+.qz-top{background:linear-gradient(158deg,#5B3FD9,#8B5CF6);padding:58px 18px 20px;color:#fff;border-radius:0 0 26px 26px;flex-shrink:0}
+.qz-top .r1{display:flex;align-items:center;gap:12px}
+.qz-top .bk{font-size:19px;opacity:.9;width:20px;background:none;border:none;color:#fff}
+.qz-top b{font-size:16px;font-weight:800;letter-spacing:.5px;flex:1}
+.qz-top .no{font-size:11px;opacity:.85;font-weight:700;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:999px}
+.qz-prog{height:6px;border-radius:4px;background:rgba(255,255,255,.25);margin-top:16px;overflow:hidden}
+.qz-prog i{display:block;height:100%;width:16%;border-radius:4px;background:linear-gradient(90deg,#FFD98A,#FFB84D);transition:width .3s}
+.qz-body{flex:1;padding:20px 18px 0}
+.qz-q{background:#fff;border-radius:18px;padding:20px 18px;box-shadow:0 8px 20px rgba(31,20,80,.06)}
+.qz-q .qn{display:inline-block;font-size:10px;font-weight:800;color:#6C4DF6;background:#EFEAFC;padding:3px 10px;border-radius:999px;letter-spacing:1px}
+.qz-q h3{font-size:17px;font-weight:800;line-height:1.55;margin-top:12px;color:#241B45}
+.qz-opts{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.qo{background:#fff;border:1.5px solid #ECE6F9;border-radius:14px;padding:14px 14px;display:flex;align-items:center;gap:11px;font-size:13px;color:#4A3F75;font-weight:600;box-shadow:0 4px 12px rgba(31,20,80,.04);text-align:left;width:100%}
+.qo span{width:24px;height:24px;border-radius:50%;background:#F1EEF9;color:#8B5CF6;font-size:11px;font-weight:800;display:grid;place-items:center;flex-shrink:0}
+.qo.sel{border-color:#8B5CF6;background:#F8F5FF}
+.qo.sel span{background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff}
+.qz-foot{display:flex;gap:12px;padding:14px 18px 34px;flex-shrink:0}
+.qz-foot .btn{flex:1;height:48px;border-radius:999px;border:none;font-family:inherit;font-size:14px;font-weight:800}
+.qz-foot .gh{background:#F1EEF9;color:#8A83A6}
+.qz-foot .pp2{background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff;box-shadow:0 10px 22px rgba(108,77,246,.35)}
+
+/* ================= 07 测验结果 ================= */
+.rs-head{background:linear-gradient(158deg,#4F8CFF,#7B5CFF 55%,#B36BFF);padding:58px 18px 30px;color:#fff;text-align:center;border-radius:0 0 28px 28px;flex-shrink:0}
+.rs-head .lb{font-size:12px;opacity:.85;letter-spacing:2px;font-weight:600}
+.rs-ring{width:130px;height:130px;border-radius:50%;background:conic-gradient(#FFD98A 0 78%,rgba(255,255,255,.22) 78% 100%);display:grid;place-items:center;margin:16px auto 0}
+.rs-ring-in{width:104px;height:104px;border-radius:50%;background:#5A4BC9;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.rs-ring-in b{font-size:38px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.rs-ring-in small{font-size:9.5px;opacity:.85;margin-top:4px;letter-spacing:1px}
+.rs-body{flex:1;padding:16px 16px 0}
+.rs-verdict{background:#fff;border-radius:18px;padding:16px;box-shadow:0 8px 20px rgba(31,20,80,.06)}
+.rs-verdict .t{font-size:15px;font-weight:800;color:#241B45;line-height:1.5}
+.rs-verdict .t em{font-style:normal;color:#FF5A3C}
+.rs-verdict p{font-size:11.5px;color:#8A83A6;line-height:1.7;margin-top:8px}
+.rs-bars{margin-top:14px;display:flex;flex-direction:column;gap:11px}
+.rb{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;color:#4A3F75}
+.rb span{width:52px}
+.rb .tr{flex:1;height:8px;border-radius:5px;background:#F1EEF9;overflow:hidden}
+.rb .fi{height:100%;border-radius:5px;background:linear-gradient(90deg,#8B5CF6,#B36BFF)}
+.rb b{width:24px;text-align:right;font-variant-numeric:tabular-nums}
+.rs-lock{margin-top:14px;background:#fff;border-radius:16px;padding:14px 16px;position:relative;overflow:hidden;box-shadow:0 6px 16px rgba(31,20,80,.05)}
+.rs-lock .bl{filter:blur(4.5px);opacity:.55;pointer-events:none;user-select:none}
+.rs-lock .lrow{display:flex;justify-content:space-between;font-size:11.5px;color:#8A83A6;padding:6px 0;font-weight:600}
+.rs-lock .lockic{position:absolute;inset:0;display:grid;place-items:center;font-size:20px}
+.rs-foot{padding:14px 16px 32px;flex-shrink:0}
+.rs-foot .btn{width:100%;height:50px;border-radius:999px;border:none;font-family:inherit;font-size:14.5px;font-weight:800;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);color:#fff;box-shadow:0 12px 26px rgba(255,90,60,.38);display:flex;align-items:center;justify-content:center;gap:8px}
+.rs-foot .btn s{font-size:11px;opacity:.75;font-weight:600}
+.rs-foot .sub{margin-top:10px;text-align:center;font-size:10.5px;color:#A79FC9;letter-spacing:.5px}
+
+/* ================= 08 咨询师列表 ================= */
+.ls-tabs{display:flex;gap:8px;padding:58px 14px 12px;background:#fff;border-bottom:1px solid var(--line);flex-shrink:0;overflow:hidden}
+.ls-tabs span{font-size:11.5px;font-weight:700;padding:7px 13px;border-radius:999px;background:#F6F3FD;color:#6E6890;white-space:nowrap;border:none}
+.ls-tabs .on{background:linear-gradient(135deg,#6C4DF6,#8B5CF6);color:#fff;box-shadow:0 6px 14px rgba(108,77,246,.3)}
+.ls-body{flex:1;padding:12px 14px 92px;overflow:hidden;background:#F8F7FC}
+.ls-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.lscard{background:#fff;border-radius:16px;padding:12px;position:relative;box-shadow:0 6px 16px rgba(31,20,80,.05);border:none;text-align:left}
+.lscard .av{width:54px;height:54px;border-radius:50%;margin:0 auto;position:relative;display:grid;place-items:center;color:#fff;font-size:19px;font-weight:800}
+.lscard .dot{position:absolute;right:-2px;bottom:-2px;width:12px;height:12px;border-radius:50%;border:2px solid #fff}
+.lscard .dot.onl{background:#19C37D}
+.lscard .dot.off{background:#C9C2DE}
+.lscard-nm{text-align:center;font-size:13.5px;font-weight:800;margin-top:9px}
+.lscard-st{text-align:center;font-size:9.5px;color:#F5A623;font-weight:700;margin-top:2px}
+.lscard-st i{font-style:normal;color:#A79FC9;font-weight:500;margin-left:4px}
+.lscard-mt{text-align:center;font-size:9.5px;color:#8A83A6;margin-top:5px;line-height:1.45;min-height:26px}
+.lscard-pr{text-align:center;margin-top:7px;font-size:16px;font-weight:800;color:#FF5A3C;font-variant-numeric:tabular-nums}
+.lscard-pr b{font-size:9.5px}
+.lscard-pr small{font-size:9px;color:#8A83A6;font-weight:500}
+.lscard .btn{display:block;width:100%;margin-top:10px;height:32px;border-radius:999px;border:none;font-family:inherit;font-size:11.5px;font-weight:800}
+.ls-empty{grid-column:1/-1;text-align:center;padding:48px 0;color:#A79FC9;font-size:12px}
+
+/* ================= 09 筛选弹层 ================= */
+.fl{background:rgba(22,14,56,.66);justify-content:flex-end;position:absolute;inset:0;z-index:60}
+.sheet{background:#fff;border-radius:26px 26px 0 0;width:100%;padding:20px 20px 30px;animation:slu .25s ease}
+@keyframes slu{from{transform:translateY(40px);opacity:.4}}
+.sheet .st{font-size:17px;font-weight:800;text-align:center;color:#241B45;margin-bottom:6px}
+.sheet .sx{margin-top:16px}
+.sheet .sx .h{font-size:13px;font-weight:800;color:#4A3F75;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.sheet .sx .h::before{content:"";width:3px;height:12px;border-radius:2px;background:linear-gradient(180deg,#8B5CF6,#B36BFF)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips .dc{font-size:11.5px;font-weight:600;padding:7px 14px;border-radius:999px;background:#F6F3FD;color:#6E6890;border:1px solid transparent}
+.chips .dc.on{background:linear-gradient(135deg,#FFE9C2,#FFD9A0);color:#8A5A12;border:1px solid #F2C078;font-weight:800}
+.sheet .btn-bk{width:100%;height:50px;margin-top:22px;font-size:14.5px;border-radius:999px;border:none;font-family:inherit;background:#1B1333;color:#fff;font-weight:800;letter-spacing:2px}
+
+/* ================= 10 咨询师详情 ================= */
+.dt-head{background:linear-gradient(158deg,#5B3FD9,#8B5CF6 60%,#B36BFF);padding:64px 18px 22px;color:#fff;border-radius:0 0 28px 28px;flex-shrink:0;position:relative}
+.dt-back{position:absolute;top:58px;left:16px;font-size:19px;opacity:.95;background:none;border:none;color:#fff}
+.dt-id{display:flex;gap:14px;align-items:center}
+.dt-av{width:74px;height:74px;border-radius:50%;background:linear-gradient(135deg,#B36BFF,#6C4DF6);display:grid;place-items:center;font-size:27px;font-weight:800;border:3px solid rgba(255,255,255,.5);position:relative;flex-shrink:0}
+.dt-av .dot{position:absolute;right:2px;bottom:2px;width:13px;height:13px;border-radius:50%;background:#19C37D;border:2px solid #fff}
+.dt-id h2{font-size:20px;font-weight:800;letter-spacing:1px}
+.dt-id .st{font-size:10.5px;margin-top:5px;opacity:.9;font-weight:600}
+.dt-tags{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.dt-tags span{font-size:9.5px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);padding:3.5px 9px;border-radius:999px;font-weight:600}
+.dt-body{flex:1;padding:14px 16px 100px;overflow:hidden}
+.dt-row{display:flex;background:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 6px 14px rgba(31,20,80,.05);font-size:11px;color:#4A3F75;font-weight:600}
+.dt-row .ci{flex:1;text-align:center}
+.dt-row .ci b{display:block;font-size:13px;font-weight:800;color:#241B45;margin-bottom:2px}
+.dt-row .ci+.ci{border-left:1px solid var(--line)}
+.dt-blk{background:#fff;border-radius:16px;padding:14px;margin-top:12px;box-shadow:0 6px 14px rgba(31,20,80,.05)}
+.dt-blk .h{font-size:13.5px;font-weight:800;color:#241B45;margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.dt-blk .h::before{content:"";width:3px;height:12px;border-radius:2px;background:linear-gradient(180deg,#8B5CF6,#B36BFF)}
+.dt-blk p{font-size:11.5px;color:#8A83A6;line-height:1.75}
+.svc{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px dashed #F0EBF9}
+.svc:last-child{border:none;padding-bottom:0}
+.svc .n{font-size:12.5px;font-weight:700;color:#3A2F6B}
+.svc .n small{display:block;font-size:9.5px;color:#A79FC9;font-weight:500;margin-top:2px}
+.svc .p{font-size:15px;font-weight:800;color:#FF5A3C;font-variant-numeric:tabular-nums}
+.svc .p b{font-size:9.5px}
+.svc .p small{display:block;font-size:9px;color:#A79FC9;font-weight:500;text-align:right}
+.rev{display:flex;gap:9px;padding:10px 0}
+.rev .av{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#FFD98A,#FFB84D);display:grid;place-items:center;font-size:11px;font-weight:800;color:#7A4E0E;flex-shrink:0}
+.rev .c{flex:1}
+.rev .c .r1{display:flex;justify-content:space-between;font-size:10.5px}
+.rev .c .r1 b{color:#3A2F6B}
+.rev .c .r1 i{font-style:normal;color:#F5A623;font-size:9.5px}
+.rev .c p{font-size:10.5px;color:#8A83A6;line-height:1.6;margin-top:3px}
+.dt-foot{position:absolute;bottom:0;left:0;right:0;height:78px;background:rgba(255,255,255,.97);border-top:1px solid var(--line);display:flex;align-items:center;padding:0 14px;gap:10px;z-index:45}
+.dt-foot .fav{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9px;color:#8A83A6;font-weight:600;width:36px;background:none;border:none}
+.dt-foot .fav .fi{font-size:18px}
+.dt-foot .fav.on{color:#FF5A3C}
+.dt-foot .btn{flex:1;height:46px;border-radius:999px;border:none;font-family:inherit;font-size:13.5px;font-weight:800}
+.dt-foot .gr{background:linear-gradient(135deg,#19C37D,#0FA968);color:#fff;box-shadow:0 8px 18px rgba(25,195,125,.35)}
+.dt-foot .bk2{background:#1B1333;color:#fff}
+
+/* ================= 11 预约支付 ================= */
+.bk-scr{background:rgba(22,14,56,.68);justify-content:flex-end;position:absolute;inset:0;z-index:60}
+.bk-sheet{background:#fff;border-radius:26px 26px 0 0;width:100%;padding:18px 20px 28px;animation:slu .25s ease}
+.bk-sheet .st{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:800;color:#241B45;margin-bottom:4px}
+.bk-sheet .st .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#B36BFF,#6C4DF6);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800}
+.bk-sheet .st small{margin-left:auto;font-size:10px;color:#19C37D;font-weight:700}
+.bk-sec{margin-top:14px}
+.bk-sec .h{font-size:12px;font-weight:800;color:#4A3F75;margin-bottom:8px}
+.bk-opts{display:flex;gap:8px;flex-wrap:wrap}
+.bk-opt{border:1.5px solid #ECE6F9;border-radius:12px;padding:8px 13px;font-size:11px;font-weight:700;color:#6E6890;background:#FAF8FF}
+.bk-opt.on{border-color:#8B5CF6;background:#F4EFFF;color:#6C4DF6}
+.bk-opt small{display:block;font-size:9px;font-weight:500;color:#A79FC9;margin-top:2px}
+.bk-sum{margin-top:16px;background:#FAF8FF;border-radius:14px;padding:12px 14px;font-size:11.5px;color:#6E6890;font-weight:600}
+.bk-sum .r{display:flex;justify-content:space-between;padding:3px 0}
+.bk-sum .r.tot{font-size:14px;font-weight:800;color:#FF5A3C;border-top:1px dashed #E4DDF5;margin-top:6px;padding-top:8px}
+.payways{display:flex;gap:8px}
+.payway{flex:1;border:1.5px solid #ECE6F9;border-radius:12px;padding:9px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;font-weight:700;color:#6E6890;background:#FAF8FF}
+.payway .pi{font-size:17px}
+.payway.on{border-color:#8B5CF6;background:#F4EFFF;color:#6C4DF6}
+.bk-sheet .btn{width:100%;height:50px;margin-top:18px;border-radius:999px;border:none;font-family:inherit;font-size:14.5px;font-weight:800;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);color:#fff;box-shadow:0 12px 26px rgba(255,90,60,.38);letter-spacing:1px}
+
+/* ================= 12 咨询室 ================= */
+.ct-head{background:linear-gradient(158deg,#5B3FD9,#8B5CF6);padding:58px 16px 14px;color:#fff;display:flex;align-items:center;gap:11px;border-radius:0 0 22px 22px;flex-shrink:0}
+.ct-head .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#B36BFF,#6C4DF6);display:grid;place-items:center;font-size:16px;font-weight:800;border:2px solid rgba(255,255,255,.5);position:relative}
+.ct-head .av .dot{position:absolute;right:-1px;bottom:-1px;width:10px;height:10px;border-radius:50%;background:#19C37D;border:2px solid #fff}
+.ct-head b{font-size:15px;font-weight:800;display:block}
+.ct-head small{font-size:9.5px;opacity:.85;display:block;margin-top:2px}
+.ct-head .tm{margin-left:auto;text-align:right}
+.ct-head .tm b{font-size:15px;font-variant-numeric:tabular-nums;letter-spacing:.5px}
+.ct-head .tm small{font-size:9px}
+.ct-body{flex:1;padding:16px 14px 0;overflow:hidden;background:#F8F7FC}
+.ct-tip{background:#FFF6E3;border:1px solid #FFE3AC;color:#8A5A12;font-size:10px;font-weight:600;border-radius:10px;padding:8px 12px;text-align:center;margin-bottom:14px}
+.msg{display:flex;gap:8px;margin-bottom:14px}
+.msg .av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#B36BFF,#6C4DF6);color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800;flex-shrink:0}
+.bub{background:#fff;border-radius:4px 14px 14px 14px;padding:10px 12px;font-size:12px;line-height:1.65;color:#3A2F6B;max-width:220px;box-shadow:0 4px 12px rgba(31,20,80,.06)}
+.msg.me{flex-direction:row-reverse}
+.msg.me .bub{background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff;border-radius:14px 4px 14px 14px}
+.msg.me .av{background:linear-gradient(135deg,#FFD98A,#FFB84D);color:#7A4E0E}
+.ct-quick{display:flex;gap:7px;padding:0 14px 10px;flex-wrap:wrap;background:#F8F7FC}
+.ct-quick span{font-size:10px;font-weight:600;color:#6C4DF6;background:#EFEAFC;border:1px solid #E0D6F8;padding:6px 11px;border-radius:999px}
+.ct-foot{display:flex;align-items:center;gap:9px;padding:10px 14px 32px;background:#fff;border-top:1px solid var(--line);flex-shrink:0}
+.ct-foot .inp{flex:1;height:38px;border-radius:999px;background:#F6F3FD;display:flex;align-items:center;padding:0 14px;font-size:11.5px;color:#A49CBE;border:none;font-family:inherit;outline:none}
+.ct-foot .ic{font-size:19px;color:#8A83A6;background:none;border:none}
+.ct-foot .end{font-size:10.5px;font-weight:800;color:#FF5A3C;border:1.5px solid #FFD4C9;padding:7px 12px;border-radius:999px;white-space:nowrap;background:none}
+
+/* ================= 12+ 呼叫 / 语音 / 视频通话 ================= */
+.cg,.vc,.vd{background:radial-gradient(125% 90% at 50% 0%,#3B2A9E 0%,#241A66 46%,#150E3A 100%);color:#fff}
+.cg-top,.vc-top,.vd-top{display:flex;align-items:center;gap:10px;padding:58px 18px 0;font-size:13px;font-weight:700;flex-shrink:0;position:relative;z-index:5}
+.cg-top .mn,.vc-top .mn,.vd-top .mn{font-size:20px;background:none;border:none;color:#fff;opacity:.9;width:22px;text-align:left;padding:0}
+.cg-top .tt,.vc-top .tt,.vd-top .tt{flex:1;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:1.5px;opacity:.9}
+.cg-top .tm,.vc-top .tm,.vd-top .tm{font-size:12px;font-variant-numeric:tabular-nums;opacity:.8;min-width:46px;text-align:right;letter-spacing:.5px}
+.cg-mid,.vc-mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 30px;position:relative;z-index:3}
+.cg-avwrap,.vc-avwrap{position:relative;width:136px;height:136px;margin-bottom:28px}
+.cg-ring,.vc-ring{position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(255,255,255,.32);animation:cgr 2.1s cubic-bezier(.2,.6,.4,1) infinite}
+.cg-ring:nth-child(2),.vc-ring:nth-child(2){animation-delay:.7s}
+.cg-ring:nth-child(3),.vc-ring:nth-child(3){animation-delay:1.4s}
+@keyframes cgr{from{transform:scale(.74);opacity:.85}to{transform:scale(1.28);opacity:0}}
+.cg-av,.vc-av{position:absolute;inset:23px;border-radius:50%;background:linear-gradient(135deg,#FFD98A,#FFB84D);display:grid;place-items:center;font-size:34px;font-weight:800;color:#5C3A00;box-shadow:0 14px 34px rgba(0,0,0,.38)}
+.cg-nm,.vc-nm{font-size:25px;font-weight:800;letter-spacing:3px}
+.cg-st{font-size:12px;opacity:.72;margin-top:10px;letter-spacing:1px}
+.cg-st .d{display:inline-block;animation:cgb 1.2s ease-in-out infinite}
+.cg-st .d:nth-child(2){animation-delay:.18s}
+.cg-st .d:nth-child(3){animation-delay:.36s}
+@keyframes cgb{0%,100%{opacity:.25}50%{opacity:1}}
+.vc-st{font-size:11.5px;opacity:.72;margin-top:10px;letter-spacing:1px}
+.vc-st b{color:#8BE9FF;font-weight:800}
+.vc-tip{margin:26px 34px 0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:9px 13px;font-size:9.5px;line-height:1.7;opacity:.75;text-align:center;flex-shrink:0;position:relative;z-index:3}
+.cg-foot,.vc-foot,.vd-foot{flex-shrink:0;padding:0 26px 46px;position:relative;z-index:5}
+.vd-foot{margin-top:auto}
+.cg-cancel{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#FF6B5A,#FF3B30);color:#fff;font-size:26px;display:grid;place-items:center;border:none;margin:0 auto;box-shadow:0 14px 30px rgba(255,59,48,.42);display:flex;flex-direction:column;gap:1px}
+.cg-cancel small{font-size:8.5px;font-weight:700;letter-spacing:1px}
+.cg-switch{margin:22px auto 0;display:block;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:11.5px;font-weight:700;padding:9px 20px;border-radius:999px;letter-spacing:.5px}
+.vc-btns{display:flex;justify-content:space-between;align-items:flex-end}
+.vc-btn{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;color:rgba(255,255,255,.82);font-weight:600;background:none;border:none;font-family:inherit}
+.vc-btn .ic{width:58px;height:58px;border-radius:50%;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;font-size:22px;transition:.15s}
+.vc-btn.on .ic{background:rgba(255,255,255,.92);color:#1B1333;border-color:transparent}
+.vc-btn.hang .ic{width:68px;height:68px;background:linear-gradient(135deg,#FF6B5A,#FF3B30);border:none;font-size:27px;box-shadow:0 14px 28px rgba(255,59,48,.45);color:#fff}
+
+/* 视频通话 */
+.vd-stage{position:absolute;inset:0;background:linear-gradient(168deg,#2E2470 0%,#4F35C9 42%,#7B54E8 76%,#A96BFF 100%);overflow:hidden}
+.vd-stage::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(2px 2px at 18% 24%,rgba(255,255,255,.9),transparent),
+  radial-gradient(1.6px 1.6px at 72% 16%,rgba(255,255,255,.75),transparent),
+  radial-gradient(2.2px 2.2px at 44% 38%,rgba(255,255,255,.55),transparent),
+  radial-gradient(1.5px 1.5px at 86% 52%,rgba(255,255,255,.7),transparent),
+  radial-gradient(1.8px 1.8px at 12% 62%,rgba(255,255,255,.6),transparent),
+  radial-gradient(2px 2px at 60% 78%,rgba(255,255,255,.5),transparent)}
+.vd-blob{position:absolute;border-radius:50%;filter:blur(52px);opacity:.5}
+.vd-b1{width:300px;height:300px;left:-90px;top:-60px;background:#8BE9FF}
+.vd-b2{width:260px;height:260px;right:-80px;bottom:12%;background:#FF6FA5}
+.vd-face{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);text-align:center;color:rgba(255,255,255,.92)}
+.vd-face .em{font-size:62px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.3))}
+.vd-face .nm{font-size:14px;font-weight:800;letter-spacing:2px;margin-top:12px;opacity:.9}
+.vd-face .sub{font-size:10px;opacity:.65;margin-top:5px;letter-spacing:1px}
+.vd-pip{position:absolute;right:14px;top:112px;width:102px;height:146px;border-radius:14px;background:linear-gradient(160deg,#1B1333,#3B2A9E 70%,#5B3FD9);border:1.5px solid rgba(255,255,255,.4);overflow:hidden;z-index:4;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:rgba(255,255,255,.85);font-size:10px;font-weight:700;box-shadow:0 12px 26px rgba(0,0,0,.42);transition:.2s}
+.vd-pip.flip{right:auto;left:14px}
+.vd-pip .me{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#FFD98A,#FFB84D);display:grid;place-items:center;font-size:15px;font-weight:800;color:#5C3A00}
+.vd-btns{display:flex;justify-content:space-between;align-items:flex-end}
+.vd-net{position:absolute;left:18px;bottom:172px;z-index:4;display:flex;align-items:center;gap:6px;font-size:9.5px;font-weight:700;background:rgba(10,6,30,.42);border:1px solid rgba(255,255,255,.16);padding:5px 11px;border-radius:999px;letter-spacing:.5px}
+.vd-net i{width:6px;height:6px;border-radius:50%;background:#19C37D;box-shadow:0 0 8px #19C37D}
+
+/* ================= 13 心情日历 ================= */
+.cd-head{background:linear-gradient(158deg,#FFB84D,#FF9A3C 60%,#FF8A3C);padding:58px 16px 20px;color:#fff;border-radius:0 0 28px 28px;flex-shrink:0}
+.cd-hrow{display:flex;align-items:center;justify-content:center;gap:16px;font-size:16px;font-weight:800;letter-spacing:2px}
+.cd-hrow i{font-style:normal;opacity:.75;font-size:14px;background:none;border:none;color:#fff}
+.cd-body{flex:1;padding:14px 14px 0;overflow:hidden}
+.cd-card{background:#fff;border-radius:18px;padding:14px 10px 12px;box-shadow:0 8px 20px rgba(31,20,80,.06)}
+.cd-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.cd-grid .wk{font-size:9.5px;color:#A79FC9;font-weight:700;padding:4px 0}
+.cd-grid .dy{font-size:11px;font-weight:600;color:#4A3F75;padding:5px 0 3px;position:relative}
+.cd-grid .dy.today{background:linear-gradient(135deg,#FF8A3C,#FF5A3C);color:#fff;border-radius:9px;font-weight:800}
+.cd-grid .dy .bu{display:block;font-size:7px;color:#FF8A3C;font-weight:800;line-height:1;margin-top:1px}
+.cd-grid .dy.today .bu{color:#fff}
+.cd-stats{background:#fff;border-radius:16px;padding:14px;margin-top:12px;box-shadow:0 6px 16px rgba(31,20,80,.05)}
+.cd-stats .h{font-size:13px;font-weight:800;color:#241B45;margin-bottom:12px}
+.cd-emo{display:flex;justify-content:space-between}
+.cd-emo .e{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:17px}
+.cd-emo .e small{font-size:8.5px;color:#A79FC9;font-weight:700}
+.cd-diary{margin-top:12px;background:linear-gradient(120deg,#FFF3DC,#FFE3B8);border-radius:16px;padding:13px 14px;display:flex;align-items:center;gap:12px;position:relative;overflow:hidden}
+.cd-diary .ill{font-size:30px}
+.cd-diary b{font-size:13.5px;color:#7A4E0E;font-weight:800;display:block}
+.cd-diary small{font-size:10px;color:#B98A2E;display:block;margin-top:2px}
+.cd-diary .go{margin-left:auto;font-size:10px;font-weight:800;color:#fff;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);padding:6px 13px;border-radius:999px;border:none}
+.cd-write{margin:12px 14px 0;height:46px;border-radius:999px;background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 22px rgba(108,77,246,.35);border:none;width:calc(100% - 28px)}
+
+/* ================= 14 树洞社区 ================= */
+.fd-tabs{display:flex;gap:22px;padding:58px 16px 12px;background:#fff;border-bottom:1px solid var(--line);font-size:14px;font-weight:600;color:#A79FC9;flex-shrink:0}
+.fd-tabs .on{color:#241B45;font-weight:800;position:relative}
+.fd-tabs .on::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-12px;width:16px;height:3px;border-radius:2px;background:linear-gradient(90deg,#6C4DF6,#B36BFF)}
+.fd-tabs span{background:none;border:none;font-size:14px;font-weight:600;color:#A79FC9;font-family:inherit}
+.fd-tabs span.on{color:#241B45;font-weight:800}
+.fd-body{flex:1;padding:12px 14px 92px;overflow:hidden;background:#F8F7FC}
+.fd-mk{background:#fff;border-radius:999px;height:42px;display:flex;align-items:center;padding:0 6px 0 14px;font-size:12px;color:#A49CBE;box-shadow:0 4px 12px rgba(31,20,80,.05);margin-bottom:12px;width:100%;border:none;text-align:left}
+.fd-mk .go{margin-left:auto;width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);color:#fff;display:grid;place-items:center;font-size:13px}
+.fd-post{background:#fff;border-radius:16px;padding:13px 14px;margin-bottom:11px;box-shadow:0 6px 16px rgba(31,20,80,.05)}
+.fd-post .p-hd .anon{background:#F1EEF9;color:#8B5CF6;font-size:8.5px;font-weight:800;padding:2px 7px;border-radius:5px;margin-left:5px}
+.fd-post p{font-size:12.5px;line-height:1.65;margin-top:9px;color:#3A2F6B}
+.fd-img{margin-top:9px;height:86px;border-radius:12px;background:linear-gradient(120deg,#C9B8FF,#8B5CF6 55%,#5B3FD9);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:11px;font-weight:600;letter-spacing:1px}
+
+/* ================= 15 消息 ================= */
+.ms-tabs{display:flex;gap:26px;padding:58px 18px 13px;background:#fff;border-bottom:1px solid var(--line);font-size:15px;font-weight:600;color:#A79FC9;flex-shrink:0}
+.ms-tabs .on{color:#241B45;font-weight:800;position:relative}
+.ms-tabs .on::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:-13px;width:18px;height:3px;border-radius:2px;background:linear-gradient(90deg,#6C4DF6,#B36BFF)}
+.ms-tabs span{background:none;border:none;font-size:15px;font-weight:600;color:#A79FC9;font-family:inherit}
+.ms-tabs span.on{color:#241B45;font-weight:800}
+.ms-body{flex:1;padding:6px 0 92px;overflow:hidden;background:#fff}
+.ms-row{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #F5F2FB;width:100%;background:none;border-left:none;border-right:none;border-top:none;text-align:left}
+.ms-row .av{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:19px;position:relative;flex-shrink:0}
+.ms-row .bd{flex:1;min-width:0}
+.ms-row .bd .r1{display:flex;justify-content:space-between;align-items:baseline}
+.ms-row .bd b{font-size:13.5px;font-weight:800;color:#241B45}
+.ms-row .bd time{font-size:9.5px;color:#C9C2DE}
+.ms-row .bd p{font-size:11px;color:#A79FC9;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ms-row .ub{position:absolute;top:-2px;right:-4px;min-width:16px;height:16px;border-radius:999px;background:#FF5A3C;color:#fff;font-size:9px;font-weight:800;display:grid;place-items:center;padding:0 4px;border:2px solid #fff}
+.ms-empty{padding:60px 0;text-align:center;color:#A79FC9;font-size:12px}
+
+/* ================= 16 我的 ================= */
+.me-head{background:linear-gradient(158deg,#5B3FD9,#8B5CF6 58%,#B36BFF);padding:64px 16px 54px;color:#fff;border-radius:0 0 28px 28px;flex-shrink:0;display:flex;gap:14px;align-items:center}
+.me-av{width:66px;height:66px;border-radius:50%;background:linear-gradient(135deg,#FFD98A,#FFB84D);display:grid;place-items:center;font-size:26px;border:3px solid rgba(255,255,255,.55);flex-shrink:0}
+.me-id b{font-size:18px;font-weight:800;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
+.me-id .vip{font-size:8.5px;font-weight:800;background:linear-gradient(135deg,#FFD98A,#F5A623);color:#5C3A00;padding:2.5px 8px;border-radius:6px;letter-spacing:.5px}
+.me-id small{display:block;font-size:10px;opacity:.8;margin-top:5px;letter-spacing:.5px}
+.me-body{flex:1;padding:0 14px;overflow:hidden;margin-top:-38px}
+.me-wallet{background:#fff;border-radius:18px;padding:15px 16px;box-shadow:0 10px 24px rgba(31,20,80,.10);display:flex;align-items:center}
+.me-wallet .lb{font-size:10.5px;color:#A79FC9;font-weight:700}
+.me-wallet .amt{font-size:22px;font-weight:800;color:#241B45;font-variant-numeric:tabular-nums;margin-top:2px}
+.me-wallet .amt b{font-size:11px}
+.me-wallet .btn{margin-left:auto;font-size:11.5px;font-weight:800;color:#fff;background:linear-gradient(135deg,#FF8A3C,#FF5A3C);padding:8px 18px;border-radius:999px;border:none;font-family:inherit;box-shadow:0 6px 14px rgba(255,90,60,.3)}
+.me-grid{background:#fff;border-radius:18px;padding:16px 8px;margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);box-shadow:0 6px 16px rgba(31,20,80,.05)}
+.me-grid .gi{display:flex;flex-direction:column;align-items:center;gap:6px;padding:9px 0;font-size:10.5px;font-weight:600;color:#5C5480;background:none;border:none;font-family:inherit}
+.me-grid .gi .ic{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;font-size:19px;background:#F4F0FD}
+.me-list{background:#fff;border-radius:18px;margin-top:12px;padding:2px 14px;box-shadow:0 6px 16px rgba(31,20,80,.05)}
+.me-list .li{display:flex;align-items:center;gap:11px;padding:13px 0;border-bottom:1px solid #F5F2FB;font-size:13px;font-weight:600;color:#3A2F6B;width:100%;background:none;border-left:none;border-right:none;border-top:none;text-align:left}
+.me-list .li:last-child{border:none}
+.me-list .li .ic{font-size:17px}
+.me-list .li i{margin-left:auto;color:#C9C2DE;font-style:normal;font-size:13px}
+.me-banner{margin:12px 0 92px;background:linear-gradient(115deg,#FFE9F2,#FFD6E8);border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:10px;color:#B03A6B}
+.me-banner b{font-size:12.5px;font-weight:800;display:block}
+.me-banner small{font-size:9.5px;display:block;margin-top:2px;opacity:.85}
+.me-banner .go{margin-left:auto;font-size:10px;font-weight:800;color:#fff;background:linear-gradient(135deg,#FF6FA5,#FF5A8C);padding:6px 13px;border-radius:999px;white-space:nowrap;border:none}
+
+/* ================= Toast ================= */
+.toast{position:absolute;top:64px;left:50%;transform:translateX(-50%) translateY(-16px);background:rgba(27,19,51,.92);color:#fff;font-size:12px;font-weight:600;padding:10px 18px;border-radius:999px;z-index:99;opacity:0;pointer-events:none;transition:.25s;white-space:nowrap;max-width:88%;overflow:hidden;text-overflow:ellipsis}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ================= 右侧控制台 ================= */
+.stage-r{flex:1;min-width:0;position:sticky;top:24px}
+.console{background:#fff;border:1px solid #E9E4F6;border-radius:22px;padding:22px;box-shadow:0 14px 34px rgba(35,22,90,.08)}
+.console h3{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.console h3::before{content:"";width:4px;height:15px;border-radius:3px;background:linear-gradient(180deg,#8B5CF6,#B36BFF)}
+.console .tip{font-size:11.5px;color:#8A83A6;line-height:1.7;margin-bottom:14px}
+.cur-page{display:flex;align-items:center;gap:9px;background:linear-gradient(135deg,#F6F3FD,#EFEAFC);border:1px solid #E4DDF5;border-radius:14px;padding:11px 14px;margin-bottom:14px}
+.cur-page .dot{width:9px;height:9px;border-radius:50%;background:#19C37D;box-shadow:0 0 0 4px rgba(25,195,125,.18);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(25,195,125,.08)}}
+.cur-page b{font-size:13px;color:#3A2F6B}
+.cur-page small{margin-left:auto;font-size:10px;color:#A79FC9;font-weight:700}
+.map-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}
+.map-btn{display:flex;align-items:center;gap:8px;background:#FAF8FF;border:1px solid #ECE6F9;border-radius:12px;padding:9px 11px;font-size:11.5px;font-weight:700;color:#5C5480;text-align:left;transition:.15s}
+.map-btn:hover{border-color:#8B5CF6;color:#6C4DF6;background:#F6F3FD}
+.map-btn .no{font-size:9px;font-weight:800;color:#fff;background:linear-gradient(135deg,#6C4DF6,#B36BFF);padding:2px 6px;border-radius:6px;flex-shrink:0}
+.map-btn .no.hot{background:linear-gradient(135deg,#FF8A3C,#FF5A3C)}
+.map-cap{font-size:10px;color:#A79FC9;font-weight:800;letter-spacing:1px;margin:14px 0 8px}
+.try-list{font-size:11.5px;color:#7A7199;line-height:2;list-style:none}
+.try-list li::before{content:"▸ ";color:#8B5CF6;font-weight:800}
+.console .reset{margin-top:14px;width:100%;height:40px;border-radius:999px;border:1.5px solid #E4DDF5;background:#fff;color:#8A83A6;font-size:12px;font-weight:800}
+.console .reset:hover{border-color:#FF5A3C;color:#FF5A3C}
+.stage-note{margin-top:14px;font-size:11px;color:#A79FC9;line-height:1.8}
+
+/* ================= 云服务 · 登录层 ================= */
+.lg-mask{position:absolute;inset:0;background:rgba(20,12,50,.55);backdrop-filter:blur(2px);display:none;align-items:flex-end;z-index:60;border-radius:44px}
+.lg-mask.act{display:flex}
+.lg-sheet{width:100%;background:#fff;border-radius:26px 26px 44px 44px;padding:22px 20px 26px;animation:lgUp .28s cubic-bezier(.2,.9,.3,1.1)}
+@keyframes lgUp{from{transform:translateY(60px);opacity:.4}}
+.lg-x{position:absolute;top:14px;right:16px;width:30px;height:30px;border:none;background:#F3F0FA;border-radius:50%;font-size:14px;color:#8A83A6}
+.lg-t{font-size:19px;font-weight:800;color:#241B45}
+.lg-s{font-size:11.5px;color:#8A83A6;margin-top:5px;line-height:1.7}
+.lg-f{margin-top:16px}
+.lg-f label{display:block;font-size:11px;font-weight:800;color:#8A83A6;letter-spacing:.5px;margin-bottom:7px}
+.lg-inp{display:flex;align-items:center;gap:8px;background:#F6F4FC;border:1.5px solid #E9E4F6;border-radius:14px;padding:0 12px;height:48px;transition:border-color .15s}
+.lg-inp:focus-within{border-color:#8B5CF6;background:#fff}
+.lg-inp input{flex:1;border:none;outline:none;background:none;font-size:15px;font-weight:600;color:#241B45;min-width:0}
+.lg-inp input::placeholder{color:#B9B2D2;font-weight:500}
+.lg-code{flex-shrink:0;border:none;background:none;font-size:12px;font-weight:800;color:#6C4DF6;padding:6px 2px}
+.lg-code:disabled{color:#B9B2D2}
+.lg-err{font-size:11px;color:#FF5A3C;margin-top:7px;min-height:14px;font-weight:600}
+.lg-btn{margin-top:14px;width:100%;height:48px;border:none;border-radius:999px;background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff;font-size:15px;font-weight:800;box-shadow:0 12px 24px rgba(108,77,246,.32)}
+.lg-btn:disabled{opacity:.55;box-shadow:none}
+.lg-or{display:flex;align-items:center;gap:10px;margin:16px 0 4px;font-size:10px;color:#C6BFDD;font-weight:700}
+.lg-or::before,.lg-or::after{content:"";flex:1;height:1px;background:#EFEBF7}
+.lg-wx{width:100%;height:46px;border:1.5px solid #E9E4F6;border-radius:999px;background:#fff;font-size:13.5px;font-weight:800;color:#3A2F6B;display:flex;align-items:center;justify-content:center;gap:8px}
+.lg-wx:hover{border-color:#12B76A}
+.lg-tip{margin-top:14px;font-size:10px;color:#B9B2D2;line-height:1.8;text-align:center}
+.lg-tip b{color:#8A83A6}
+.lg-cloud{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:10px;color:#12B76A;font-weight:700}
+.lg-cloud i{width:6px;height:6px;border-radius:50%;background:#12B76A;box-shadow:0 0 0 3px rgba(25,195,125,.16);animation:pulse 1.6s infinite}
+
+/* 我的页 · 登录态 */
+.me-av{cursor:pointer;position:relative}
+.me-login-tag{position:absolute;right:-2px;bottom:-2px;width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff;font-size:11px;display:grid;place-items:center;border:2px solid #fff;font-weight:800}
+.me-out{margin-top:12px;width:100%;height:38px;border-radius:999px;border:1.5px solid #E9E4F6;background:#fff;color:#8A83A6;font-size:12px;font-weight:800}
+.me-out:hover{border-color:#FF5A3C;color:#FF5A3C}
+.me-cloud{margin-top:10px;font-size:10px;color:#12B76A;font-weight:700;display:flex;align-items:center;gap:5px}
+.me-cloud i{width:6px;height:6px;border-radius:50%;background:#12B76A;box-shadow:0 0 0 3px rgba(25,195,125,.16);animation:pulse 1.6s infinite}
+
+/* ================= 云服务 · 发帖层 ================= */
+.mk-mask{position:absolute;inset:0;background:rgba(20,12,50,.55);backdrop-filter:blur(2px);display:none;align-items:flex-end;z-index:60;border-radius:44px}
+.mk-mask.act{display:flex}
+.mk-sheet{width:100%;background:#fff;border-radius:26px 26px 44px 44px;padding:22px 20px 26px;animation:lgUp .28s cubic-bezier(.2,.9,.3,1.1)}
+.mk-t{font-size:17px;font-weight:800;color:#241B45;margin-bottom:12px}
+.mk-ta{width:100%;height:110px;border:1.5px solid #E9E4F6;background:#F6F4FC;border-radius:14px;padding:12px;font-size:13.5px;line-height:1.7;color:#241B45;outline:none;resize:none;font-family:inherit}
+.mk-ta:focus{border-color:#8B5CF6;background:#fff}
+.mk-row{display:flex;gap:8px;margin-top:12px;align-items:center}
+.mk-tag{flex:1;border:1.5px solid #E9E4F6;border-radius:999px;height:36px;padding:0 14px;font-size:12px;font-weight:700;color:#5C5480;outline:none;background:#fff}
+.mk-go{flex-shrink:0;height:38px;padding:0 22px;border:none;border-radius:999px;background:linear-gradient(135deg,#8B5CF6,#6C4DF6);color:#fff;font-size:13px;font-weight:800}
+.mk-go:disabled{opacity:.55}
+.fd-post .p-ft button.liked{color:#FF5A3C;font-weight:800}
+.fd-mine{font-size:9px;background:#EFEAFC;color:#6C4DF6;border-radius:6px;padding:1px 6px;font-weight:800;margin-left:5px;vertical-align:1px}
+.fd-cloud-note{font-size:10px;color:#B9B2D2;text-align:center;padding:4px 0 10px;font-weight:600}
+
+@media (max-width:1080px){
+  .stage{flex-direction:column;align-items:center}
+  .stage-r{position:static;width:100%;max-width:520px}
+}
+@media (max-width:720px){
+  .grid3{grid-template-columns:1fr}
+  .tree{column-count:1}
+  .sw-row{grid-template-columns:repeat(3,1fr)}
+  .hero h1{font-size:30px}
+  .pouter{transform:scale(.86);transform-origin:top center;margin-bottom:-90px}
+  .map-grid{grid-template-columns:1fr}
+}
+
+
+
+
+/* ================= 成品模式（App 化） ================= */
+body.app-mode{background:#0B0817;display:flex;align-items:center;justify-content:center;min-height:100vh;min-height:100dvh;overflow:hidden}
+body.app-mode .pouter{width:395px;height:834px;transform:none;margin:0;flex-shrink:0}
+body.app-mode .phone{position:relative;transform:none;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+body.pwa .sb,body.pwa .hi{display:none}
+@media (max-width:520px){
+  body.app-mode .pouter{width:100vw;height:100vh;height:100dvh}
+  body.app-mode .phone{width:100%;height:100%;border-radius:0;padding:0;box-shadow:none}
+  body.app-mode .scr{border-radius:0}
+  body.app-mode .phone::after{display:none}
+}
+</style>
+</head>
+<body>
+<div class="doc">
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="kicker">MOBILE APP · INTERACTIVE PROTOTYPE</div>
+  <h1>「芳芳」App 交互原型<br><span>命理测算 × 情感咨询 × 心灵疗愈 · 全部可以点</span></h1>
+  <p class="sub">这就是朋友想做的那个 App——现在已经做成<b style="color:#6C4DF6">可点击的交互原型</b>：下面的手机不是图片，是真正能操作的。Tab 切换、弹窗、答题、筛选、预约支付、咨询室聊天，全部可以一路点下去。把网页发给朋友，他拿起手机就能自己走完整流程。</p>
+  <div class="meta">
+    <span class="mchip live">● 在线可交互</span>
+    <span class="mchip">📱 19 个页面全可点</span>
+    <span class="mchip">🧭 右侧控制台可直达任意页</span>
+    <span class="mchip">🗓 2026-10-24</span>
+  </div>
+  <div class="toc">
+    <a href="#proto">▶ 交互原型（重点）</a>
+    <a href="#s1">01 产品定位</a>
+    <a href="#s2">02 信息架构</a>
+    <a href="#s3">03 设计系统</a>
+    <a href="#s4">04 核心流程</a>
+    <a href="#s5">05 页面清单</a>
+  </div>
+</div>
+
+<!-- ================= 交互原型 ================= -->
+<section id="proto">
+  <div class="sec-h"><span class="no">▶</span><h2>交互原型 · 点一下试试</h2><span class="en">CLICKABLE PROTOTYPE</span></div>
+  <div class="stage">
+    <div class="stage-l">
+      <div class="pouter">
+        <div class="phone">
+          <!-- 01 开屏 -->
+          <div class="scr sp" id="scr-splash" data-sb="lt">
+            <span class="sp-star" style="width:3px;height:3px;top:12%;left:18%"></span>
+            <span class="sp-star" style="width:2px;height:2px;top:20%;left:78%"></span>
+            <span class="sp-star" style="width:2.5px;height:2.5px;top:30%;left:12%"></span>
+            <span class="sp-star" style="width:2px;height:2px;top:9%;left:52%"></span>
+            <span class="sp-star" style="width:2px;height:2px;top:38%;left:86%"></span>
+            <span class="sp-star" style="width:3px;height:3px;top:52%;left:8%"></span>
+            <span class="sp-star" style="width:2px;height:2px;top:60%;left:90%"></span>
+            <span class="sp-tet" style="top:16%;left:30%">✦</span>
+            <span class="sp-tet" style="top:26%;left:66%;font-size:10px">✦</span>
+            <span class="sp-tet" style="top:46%;left:84%;font-size:9px">✦</span>
+            <button class="sp-skip" data-act="skip">跳过 ›</button>
+            <div class="sp-mid">
+              <div style="width:128px;height:140px">
+                <svg viewBox="0 0 120 132" width="128" height="140">
+                  <circle cx="60" cy="66" r="54" fill="#fff" opacity=".10"/>
+                  <path d="M60 8 86 46H34z" fill="#FFD66B"/>
+                  <ellipse cx="60" cy="47" rx="27" ry="6.5" fill="#F2BE4B"/>
+                  <rect x="37" y="50" width="46" height="42" rx="19" fill="#fff"/>
+                  <circle cx="50" cy="68" r="3.6" fill="#3B2A9E"/><circle cx="70" cy="68" r="3.6" fill="#3B2A9E"/>
+                  <circle cx="45" cy="74" r="3.2" fill="#FFB3C7"/><circle cx="75" cy="74" r="3.2" fill="#FFB3C7"/>
+                  <path d="M55 75.5q5 4.5 10 0" stroke="#3B2A9E" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                  <path d="M60 94c19 0 31 10 33 26v14H27v-14c2-16 14-26 33-26z" fill="#fff"/>
+                  <path d="M44 97q16 11 32 0v7q-16 11-32 0z" fill="#B36BFF"/>
+                  <circle cx="60" cy="122" r="11" fill="#8BE9FF"/>
+                  <circle cx="56" cy="118" r="3" fill="#fff" opacity=".85"/>
+                </svg>
+              </div>
+              <div class="sp-name">芳芳</div>
+              <div class="sp-en">FANGFANG</div>
+              <div class="sp-slo">知命 · 疗心 · 陪伴</div>
+            </div>
+            <div class="sp-bot">
+              <div class="sp-gift">🎁 新人专享 · 首单 3 分钟免费咨询</div>
+            </div>
+            <div class="sp-ver">v0.1 · 交互原型</div>
+          </div>
+
+          <!-- 02 首页 -->
+          <div class="scr hm" id="scr-home" data-sb="lt" data-nav="home">
+            <div class="hm-top">
+              <div class="hm-brandrow">
+                <div class="hm-logo"><span class="lm">芳</span><div><b>芳芳</b><small>答疑解惑 · 抚慰人心</small></div></div>
+                <button class="hm-mascot" data-act="ov" data-to="free" style="width:54px;height:60px">
+                  <svg viewBox="0 0 120 132" width="54" height="60">
+                    <path d="M60 8 86 46H34z" fill="#FFD66B"/><ellipse cx="60" cy="47" rx="27" ry="6.5" fill="#F2BE4B"/>
+                    <rect x="37" y="50" width="46" height="42" rx="19" fill="#fff"/>
+                    <circle cx="50" cy="68" r="3.6" fill="#3B2A9E"/><circle cx="70" cy="68" r="3.6" fill="#3B2A9E"/>
+                    <circle cx="45" cy="74" r="3.2" fill="#FFB3C7"/><circle cx="75" cy="74" r="3.2" fill="#FFB3C7"/>
+                    <path d="M55 75.5q5 4.5 10 0" stroke="#3B2A9E" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                    <path d="M60 94c19 0 31 10 33 26v14H27v-14c2-16 14-26 33-26z" fill="#fff"/>
+                    <path d="M44 97q16 11 32 0v7q-16 11-32 0z" fill="#B36BFF"/>
+                    <circle cx="60" cy="122" r="11" fill="#8BE9FF"/>
+                  </svg>
+                  <i class="free">免费</i>
+                </button>
+              </div>
+              <div class="hm-chips"><span>☯ 八字</span><span>🃏 塔罗</span><span>🔮 紫微</span></div>
+              <button class="hm-search" data-act="toast" data-msg="搜索页为独立模块，原型从简">请输入你想问的问题<span class="go">➤</span></button>
+            </div>
+            <div class="hm-body">
+              <div class="hm-two">
+                <button class="hm-card blue" data-act="toast" data-msg="今日能量：综合 89 分，宜主动表达"><b>今日能量</b><small>免费查看每日能量</small><i>?</i></button>
+                <button class="hm-card green" data-act="toast" data-msg="八字排盘：需登录后查看（演示）"><b>八字排盘</b><small>免费检视八字神煞</small><i>☯</i></button>
+              </div>
+              <div class="hm-grid">
+                <button class="hg" data-act="ov" data-to="quiz"><span class="hgi">📝</span><small>测试</small></button>
+                <button class="hg" data-act="go" data-to="list"><span class="hgi">🃏</span><small>塔罗</small></button>
+                <button class="hg" data-act="go" data-to="list"><span class="hgi">🔭</span><small>星盘</small></button>
+                <button class="hg" data-act="ov" data-to="quiz"><span class="hgi">🎲</span><small>趣味</small><i class="nb">NEW</i></button>
+                <button class="hg" data-act="toast" data-msg="祈福模块：原型从简"><span class="hgi">🙏</span><small>祈福</small></button>
+                <button class="hg" data-act="go" data-to="list"><span class="hgi">💬</span><small>心理</small></button>
+              </div>
+              <div class="hm-sec">
+                <div class="hm-sech"><b>Live&Oncall</b><em>新人3分钟免费</em><i>›</i></div>
+                <div class="hm-lives">
+                  <button class="lv lv1" data-act="toast" data-msg="已预约「心灵疗愈之旅」开播提醒">
+                    <span class="lv-b">▶ 预约 10-24, 23:34</span>
+                    <b>开启心灵<br>疗愈之旅</b>
+                    <div class="lv-t"><span class="av">曦</span>曦月 · 资深情感疗愈师</div>
+                    <small>十年恋情，要不要继续</small>
+                  </button>
+                  <button class="lv lv2" data-act="toast" data-msg="已预约「专属命运之轮」开播提醒">
+                    <span class="lv-b">▶ 预约 10-24, 15:59</span>
+                    <b>开启你的<br>专属命运之轮</b>
+                    <div class="lv-t"><span class="av">曦</span>曦月 · 资深情感疗愈师</div>
+                    <small>婚前必看！你们真的适合吗？</small>
+                  </button>
+                </div>
+              </div>
+              <div class="hm-sec">
+                <div class="hm-sech"><b>推荐老师</b><div class="hm-fchips"><span class="on">专属推荐</span><span>星级名师</span><span>婚姻情感</span></div></div>
+                <div class="hm-tgrid">
+                  <div class="tcard">
+                    <div class="av">王<i class="dot"></i></div>
+                    <div class="tcard-nm">阿赞王 <em>★4.9</em></div>
+                    <div class="tcard-mt">负能量消除、职业规划<br>◁ 1447 · 从业 11 年</div>
+                    <div class="tcard-pr"><b>¥</b>68.00<small>起/小时</small></div>
+                    <button class="btn btn-bk" data-act="go" data-to="detail" data-teacher="0">咨询</button>
+                  </div>
+                  <div class="tcard">
+                    <div class="av">阳<i class="dot"></i></div>
+                    <div class="tcard-nm">易弘阳 <em>★5.0</em></div>
+                    <div class="tcard-mt">恋爱情感、职业规划<br>◁ 1022 · 从业 37 年</div>
+                    <div class="tcard-pr"><b>¥</b>29.00<small>起/小时</small></div>
+                    <button class="btn btn-bk" data-act="go" data-to="detail" data-teacher="1">咨询</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 03 发现 -->
+          <div class="scr so" id="scr-disc" data-sb="lt" data-nav="disc">
+            <div class="so-head">
+              <div class="so-hrow"><span>您的今日心情</span><button data-act="go" data-to="calendar" style="background:none;border:none;color:#fff;font-size:16px">📅</button></div>
+              <div class="so-scores">
+                <div class="so-bars">
+                  <div class="sbar"><span>感情</span><div class="tr"><div class="fi" style="width:86%;background:linear-gradient(90deg,#FF9AC4,#FF6FA5)"></div></div><b>86</b></div>
+                  <div class="sbar"><span>财富</span><div class="tr"><div class="fi" style="width:75%;background:linear-gradient(90deg,#FFD98A,#FFB84D)"></div></div><b>75</b></div>
+                  <div class="sbar"><span>事业</span><div class="tr"><div class="fi" style="width:72%;background:linear-gradient(90deg,#8BE9FF,#4F8CFF)"></div></div><b>72</b></div>
+                </div>
+                <div class="ring"><div class="ring-in"><b>89</b><small>综合分数</small></div></div>
+              </div>
+            </div>
+            <div class="so-body">
+              <button class="so-banner" data-act="go" data-to="quiz">
+                <div>
+                  <b>情绪轻疗愈 · 7天觉察之旅</b>
+                  <small>与自己的情绪温柔相拥</small>
+                  <span class="btn-mini">立即参与</span>
+                </div>
+                <svg class="ill" width="66" height="54" viewBox="0 0 66 54">
+                  <circle cx="49" cy="13" r="8" fill="#FFD66B"/>
+                  <g stroke="#2E9E63" stroke-width="3" fill="none" stroke-linecap="round">
+                    <path d="M16 50V24"/>
+                    <path d="M16 33c-7-2-9-9-7-13 6 0 9 6 7 13z" fill="#57C784" stroke="none"/>
+                    <path d="M16 28c7-2 9-9 7-13-6 0-9 6-7 13z" fill="#7FD9A5" stroke="none"/>
+                  </g>
+                  <ellipse cx="30" cy="50" rx="21" ry="3" fill="#8FD6A8" opacity=".55"/>
+                </svg>
+              </button>
+              <div class="so-tabs"><span class="on">推荐</span><span>文章</span><span data-act="go" data-to="treehole">树洞 ›</span></div>
+              <div class="post">
+                <div class="p-hd"><span class="p-av">W</span><div><b>Ww</b><small>2小时前</small></div><i>···</i></div>
+                <p>事事顺心皆如意 ❤️</p>
+                <div class="p-tag" data-act="go" data-to="treehole" style="cursor:pointer"># 情绪树洞 ›</div>
+                <div class="p-ft"><button data-act="like">👍 4</button><span>💬 评论</span><span>↗ 分享</span></div>
+              </div>
+              <div class="post">
+                <div class="p-hd"><span class="p-av">祈</span><div><b>祈月</b><small>2小时前</small></div><i>···</i></div>
+                <p>别后悔当初的选择，因为受害人是你</p>
+                <div class="p-tag" data-act="go" data-to="treehole" style="cursor:pointer"># 情绪树洞 ›</div>
+                <div class="p-ft"><button data-act="like">👍 3</button><span>💬 评论</span><span>↗ 分享</span></div>
+              </div>
+              <div class="post">
+                <div class="p-hd"><span class="p-av">追</span><div><b>追风少年Hero</b><small>4小时前</small></div><i>···</i></div>
+                <p>今天的风很舒服，适合把不开心吹散 🌬</p>
+                <div class="p-tag" data-act="go" data-to="treehole" style="cursor:pointer"># 情绪树洞 ›</div>
+                <div class="p-ft"><button data-act="like">👍 8</button><span>💬 评论</span><span>↗ 分享</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 15 消息 -->
+          <div class="scr ms" id="scr-msg" data-nav="msg">
+            <div class="ms-tabs"><span class="on">消息</span><span>通知</span></div>
+            <div class="ms-body">
+              <button class="ms-row" data-act="go" data-to="chat">
+                <span class="av" style="background:linear-gradient(135deg,#B36BFF,#6C4DF6);color:#fff">助</span>
+                <div class="bd"><div class="r1"><b>咨询助手</b><time>刚刚</time></div><p>你和「灵子」的预约将在明天 21:00 开始，记得准时上线哦～</p></div>
+              </button>
+              <button class="ms-row" data-act="toast" data-msg="公告详情页：原型从简">
+                <span class="av" style="background:linear-gradient(135deg,#FFD98A,#FFB84D);color:#7A4E0E">官</span>
+                <div class="bd"><div class="r1"><b>官方公告</b><time>10-24</time></div><p>新人 3 分钟免费连线额度已到账，48 小时内有效</p></div>
+              </button>
+              <button class="ms-row" data-act="toast" data-msg="已设置直播开播提醒">
+                <span class="av" style="background:linear-gradient(135deg,#FF9AC4,#FF6FA5);color:#fff">曦</span>
+                <div class="bd"><div class="r1"><b>曦月</b><time>10-23</time></div><p>你预约的「开启心灵疗愈之旅」直播将于今晚 23:34 开始</p></div>
+              </button>
+              <button class="ms-row" data-act="go" data-to="result">
+                <span class="av" style="background:linear-gradient(135deg,#4F8CFF,#7B5CFF);color:#fff">系</span>
+                <div class="bd"><div class="r1"><b>系统消息</b><time>10-22</time></div><p>你的「暧昧真心指数」完整报告已生成，点击查看</p></div>
+              </button>
+              <button class="ms-row" data-act="toast" data-msg="评价送 5 积分（演示）">
+                <span class="av" style="background:linear-gradient(135deg,#8BE9FF,#4F8CFF);color:#fff">评</span>
+                <div class="bd"><div class="r1"><b>评价提醒</b><time>10-21</time></div><p>上次与「灵子」的咨询还差一个评价，送 5 积分</p></div>
+              </button>
+            </div>
+          </div>
+
+          <!-- 16 我的 -->
+          <div class="scr me" id="scr-me" data-sb="lt" data-nav="me">
+            <div class="me-head">
+              <span class="me-av" id="meAv" data-act="openlogin">🧧<i class="me-login-tag" id="meLoginTag">+</i></span>
+              <div class="me-id">
+                <b id="meName">点击登录</b>
+                <small id="meSub">登录后同步心情 · 预约 · 报告</small>
+              </div>
+            </div>
+            <div class="me-body">
+              <div class="me-wallet">
+                <div><div class="lb">钱包余额</div><div class="amt"><b>¥</b>128.00</div></div>
+                <button class="btn" data-act="toast" data-msg="充值页：原型从简（演示余额充足）">充值</button>
+              </div>
+              <div class="me-cloud" id="meCloud" style="display:none"><i></i>云端已连接 · 数据实时保存</div>
+              <div class="me-grid">
+                <button class="gi" data-act="toast" data-msg="我的订单：演示暂无订单"><span class="ic">📋</span>我的订单</button>
+                <button class="gi" data-act="mybookings"><span class="ic">📅</span>我的预约</button>
+                <button class="gi" data-act="toast" data-msg="我的收藏：空空如也"><span class="ic">❤️</span>我的收藏</button>
+                <button class="gi" data-act="go" data-to="calendar"><span class="ic">📔</span>心情日记</button>
+                <button class="gi" data-act="myreports"><span class="ic">📊</span>我的报告</button>
+                <button class="gi" data-act="toast" data-msg="邀请链接已复制（演示）"><span class="ic">🎁</span>邀请好友</button>
+              </div>
+              <div class="me-list">
+                <button class="li" data-act="toast" data-msg="会员中心：每月赠 3 次连线"><span class="ic">👑</span>会员中心 · 每月赠 3 次连线<i>›</i></button>
+                <button class="li" data-act="toast" data-msg="帮助与反馈：原型从简"><span class="ic">🎧</span>帮助与反馈<i>›</i></button>
+                <button class="li" data-act="toast" data-msg="设置页：原型从简"><span class="ic">⚙️</span>设置<i>›</i></button>
+              </div>
+              <button class="me-out" id="meOut" data-act="logout" style="display:none">退出登录</button>
+              <button class="me-out" id="meReset" data-act="resetdemo" style="display:none;background:#fff;color:#8A83A6;border:1.5px solid #EFEBF7;margin-top:8px">重置演示数据</button>
+              <div class="me-banner">
+                <span style="font-size:22px">💌</span>
+                <div><b>邀请好友各得 ¥20</b><small>好友首单完成后到账</small></div>
+                <button class="go" data-act="toast" data-msg="邀请海报已生成（演示）">去邀请</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 06 测验答题 -->
+          <div class="scr qz" id="scr-quiz" data-sb="lt">
+            <div class="qz-top">
+              <div class="r1"><button class="bk" data-act="back">‹</button><b>暧昧真心指数</b><span class="no" id="qzNo">1 / 6</span></div>
+              <div class="qz-prog"><i id="qzBar" style="width:16%"></i></div>
+            </div>
+            <div class="qz-body">
+              <div class="qz-q">
+                <span class="qn" id="qzQn">Q1</span>
+                <h3 id="qzQ">当对方已读不回你的消息时，你的第一反应是？</h3>
+              </div>
+              <div class="qz-opts" id="qzOpts">
+                <button class="qo sel" data-opt="A"><span>A</span>胡思乱想，反复检查对话记录</button>
+                <button class="qo" data-opt="B"><span>B</span>先忙自己的，他早晚会回</button>
+                <button class="qo" data-opt="C"><span>C</span>直接问清楚，不喜欢猜来猜去</button>
+                <button class="qo" data-opt="D"><span>D</span>假装不在意，其实很在意</button>
+              </div>
+            </div>
+            <div class="qz-foot">
+              <button class="btn gh" id="qzPrev" data-act="back">上一题</button>
+              <button class="btn pp2" id="qzNext" data-act="quiznext">下一题</button>
+            </div>
+          </div>
+
+          <!-- 07 测验结果 -->
+          <div class="scr rs" id="scr-result" data-sb="lt">
+            <div class="rs-head">
+              <button class="bk" data-act="back" style="position:absolute;top:58px;left:16px;font-size:19px;background:none;border:none;color:#fff">‹</button>
+              <div class="lb">暧 昧 真 心 指 数</div>
+              <div class="rs-ring"><div class="rs-ring-in"><b>78</b><small>综合指数</small></div></div>
+            </div>
+            <div class="rs-body">
+              <div class="rs-verdict">
+                <div class="t">他对你有好感，但<em>仍在观望</em></div>
+                <p>你的吸引力在线，但对方在「确认关系」上明显迟疑。先别急着要答案，把下面这 3 个维度看完再决定。</p>
+              </div>
+              <div class="rs-bars">
+                <div class="rb"><span>主动性</span><div class="tr"><div class="fi" style="width:82%"></div></div><b>82</b></div>
+                <div class="rb"><span>回应热度</span><div class="tr"><div class="fi" style="width:74%"></div></div><b>74</b></div>
+                <div class="rb"><span>情绪稳定</span><div class="tr"><div class="fi" style="width:66%"></div></div><b>66</b></div>
+                <div class="rb"><span>未来规划</span><div class="tr"><div class="fi" style="width:58%"></div></div><b>58</b></div>
+              </div>
+              <div class="rs-lock">
+                <div class="bl">
+                  <div class="lrow"><span>他的真实顾虑</span><b>已隐藏</b></div>
+                  <div class="lrow"><span>推进关系的最佳时机</span><b>已隐藏</b></div>
+                  <div class="lrow"><span>一句话让他主动表白</span><b>已隐藏</b></div>
+                </div>
+                <div class="lockic">🔒</div>
+              </div>
+            </div>
+            <div class="rs-foot">
+              <button class="btn" data-act="unlock">¥9.9 解锁完整报告 <s>¥39</s></button>
+              <div class="sub">解锁后可一键分享给闺蜜 · 或找老师解读</div>
+            </div>
+          </div>
+
+          <!-- 08 咨询师列表 -->
+          <div class="scr ls" id="scr-list">
+            <div class="ls-tabs">
+              <button data-act="ov" data-to="filter">筛选 ▾</button>
+              <button class="on" data-lstab="star">星级名师</button>
+              <button data-lstab="love">婚姻情感</button>
+              <button data-lstab="tarot">塔罗占星</button>
+            </div>
+            <div class="ls-body">
+              <div class="ls-grid" id="lsGrid"></div>
+            </div>
+          </div>
+
+          <!-- 10 咨询师详情 -->
+          <div class="scr dt" id="scr-detail" data-sb="lt">
+            <div class="dt-head">
+              <button class="dt-back" data-act="back">‹</button>
+              <div class="dt-id">
+                <div class="dt-av" id="dtAv">子<i class="dot"></i></div>
+                <div>
+                  <h2 id="dtName">灵子</h2>
+                  <div class="st" id="dtSt">★5.0 · 9443 条评价 · 15年经验</div>
+                  <div class="dt-tags"><span>人生分析</span><span>命理占卜</span><span>心理咨询</span><span>缘分引路</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="dt-body">
+              <div class="dt-row">
+                <div class="ci"><b>在线</b>即时可连线</div>
+                <div class="ci"><b>3 分钟</b>平均响应</div>
+                <div class="ci"><b>98%</b>好评率</div>
+              </div>
+              <div class="dt-blk">
+                <div class="h">个人简介</div>
+                <p>从业 15 年，累计咨询 9400+ 小时。擅长八字与塔罗交叉解读，聚焦职业选择、婚恋走向与人生节点决策。咨询风格温和直接，不给模棱两可的答案。</p>
+              </div>
+              <div class="dt-blk">
+                <div class="h">服务项目</div>
+                <div class="svc"><div class="n">单项咨询<small>30 分钟 · 图文 / 语音</small></div><div class="p"><b>¥</b>25.00<small>/次</small></div></div>
+                <div class="svc"><div class="n">深度解析<small>60 分钟 · 语音 / 视频</small></div><div class="p"><b>¥</b>68.00<small>/时</small></div></div>
+                <div class="svc"><div class="n">情感合盘<small>双方八字 / 星盘合参</small></div><div class="p"><b>¥</b>98.00<small>/次</small></div></div>
+              </div>
+              <div class="dt-blk">
+                <div class="h">用户评价</div>
+                <div class="rev"><span class="av">嗯</span><div class="c"><div class="r1"><b>嗯***啦</b><i>★★★★★</i></div><p>说的时机很准，纠结半年的事终于有方向了。</p></div></div>
+                <div class="rev"><span class="av">安</span><div class="c"><div class="r1"><b>安***子</b><i>★★★★★</i></div><p>很温柔但句句在点子上，已经约了下一次。</p></div></div>
+              </div>
+            </div>
+            <div class="dt-foot">
+              <button class="fav" id="favBtn" data-act="fav"><span class="fi">♡</span>收藏</button>
+              <button class="btn gr" data-act="call">连线</button>
+              <button class="btn bk2" data-act="ov" data-to="booking">咨询</button>
+            </div>
+          </div>
+
+          <!-- 11 预约支付 -->
+          <div class="scr bk-scr" id="scr-booking" data-sb="lt">
+            <div class="bk-sheet">
+              <div class="st"><span class="av">子</span>预约 · 灵子<small>● 在线</small></div>
+              <div class="bk-sec">
+                <div class="h">选择服务</div>
+                <div class="bk-opts" data-group="svc">
+                  <button class="bk-opt on" data-i="0">深度解析<small>60 分钟</small></button>
+                  <button class="bk-opt" data-i="1">单项咨询<small>30 分钟</small></button>
+                  <button class="bk-opt" data-i="2">情感合盘<small>双方合参</small></button>
+                </div>
+              </div>
+              <div class="bk-sec">
+                <div class="h">选择日期</div>
+                <div class="bk-opts" data-group="day">
+                  <button class="bk-opt" data-i="0">今天 10-24</button>
+                  <button class="bk-opt on" data-i="1">明天 10-25</button>
+                  <button class="bk-opt" data-i="2">后天 10-26</button>
+                </div>
+              </div>
+              <div class="bk-sec">
+                <div class="h">选择时间</div>
+                <div class="bk-opts" data-group="time">
+                  <button class="bk-opt" data-i="0">20:00</button>
+                  <button class="bk-opt on" data-i="1">21:00</button>
+                  <button class="bk-opt" data-i="2">22:00</button>
+                  <button class="bk-opt" data-i="3">22:30</button>
+                </div>
+              </div>
+              <div class="bk-sum">
+                <div class="r"><span id="sumSvc">深度解析 · 60 分钟</span><span id="sumPrice">¥68.00</span></div>
+                <div class="r"><span>新人优惠</span><span>-¥10.00</span></div>
+                <div class="r tot"><span>实付</span><span id="sumTotal">¥58.00</span></div>
+              </div>
+              <div class="bk-sec">
+                <div class="h">支付方式</div>
+                <div class="payways" data-group="pay">
+                  <button class="payway on" data-i="0"><span class="pi">💬</span>微信支付</button>
+                  <button class="payway" data-i="1"><span class="pi">🅰️</span>支付宝</button>
+                  <button class="payway" data-i="2"><span class="pi">👛</span>余额 ¥128</button>
+                </div>
+              </div>
+              <button class="btn" id="payBtn" data-act="pay">确认支付 ¥58.00</button>
+            </div>
+          </div>
+
+          <!-- 12 咨询室 -->
+          <div class="scr ct" id="scr-chat" data-sb="lt">
+            <div class="ct-head">
+              <button data-act="back" style="background:none;border:none;color:#fff;font-size:19px">‹</button>
+              <span class="av">子<i class="dot"></i></span>
+              <div><b>灵子</b><small>资深命理咨询师</small></div>
+              <div class="tm"><b id="ctTimer">12:33</b><small>剩余 12 分钟</small></div>
+            </div>
+            <div class="ct-body" id="ctBody">
+              <div class="ct-tip">⏱ 咨询计时中 · 结束后可评价并申请售后</div>
+              <div class="msg">
+                <span class="av">子</span>
+                <div class="bub">你好呀，我看到你约的是深度解析。最近是哪件事最让你放不下？先和我说说大概情况。</div>
+              </div>
+              <div class="msg me">
+                <span class="av">我</span>
+                <div class="bub">感情的事。在一起三年，最近半年他越来越冷淡，我不知道该不该继续。</div>
+              </div>
+              <div class="msg">
+                <span class="av">子</span>
+                <div class="bub">能把你们两个的出生日期给我吗？我结合八字看一下彼此的节奏，再给你一个明确判断。</div>
+              </div>
+              <div class="msg me">
+                <span class="av">我</span>
+                <div class="bub">好，我 1996.03.12，他 1994.11.05。</div>
+              </div>
+            </div>
+            <div class="ct-quick">
+              <button data-act="quick" data-msg="我该离婚吗">我该离婚吗</button>
+              <button data-act="quick" data-msg="他还在意我吗">他还在意我吗</button>
+              <button data-act="quick" data-msg="今年适合换工作吗">今年适合换工作吗</button>
+            </div>
+            <div class="ct-foot">
+              <span class="ic">🖼</span>
+              <input class="inp" id="ctInput" placeholder="说点什么…" maxlength="60">
+              <span class="ic">🎤</span>
+              <span class="ic" data-act="call" title="发起语音通话">📞</span>
+              <span class="ic" data-act="callvideo" title="发起视频通话">📹</span>
+              <button class="end" data-act="toast" data-msg="已结束咨询，去评价送 5 积分">结束评价</button>
+            </div>
+          </div>
+
+          <!-- 12+ 呼叫等待 -->
+          <div class="scr cg" id="scr-calling" data-sb="lt">
+            <div class="cg-top">
+              <span class="tm">🔒 加密</span>
+              <span class="tt">正在呼叫</span>
+              <span class="tm" id="cgWait">00:02</span>
+            </div>
+            <div class="cg-mid">
+              <div class="cg-avwrap">
+                <span class="cg-ring"></span><span class="cg-ring"></span><span class="cg-ring"></span>
+                <div class="cg-av" id="cgAv">子</div>
+              </div>
+              <div class="cg-nm" id="cgName">灵子</div>
+              <div class="cg-st" id="cgSt">语音呼叫 · 等待老师接听<span class="d">。</span><span class="d">。</span><span class="d">。</span></div>
+            </div>
+            <button class="cg-switch" id="cgSwitch" data-act="callswitch">改用视频呼叫</button>
+            <div class="cg-foot">
+              <button class="cg-cancel" data-act="callcancel"><span>✕</span><small>取消</small></button>
+            </div>
+          </div>
+
+          <!-- 12+ 语音通话 -->
+          <div class="scr vc" id="scr-voice" data-sb="lt">
+            <div class="vc-top">
+              <button class="mn" data-act="vcend">‹</button>
+              <span class="tt">语音咨询中</span>
+              <span class="tm" id="vcTimer">00:00</span>
+            </div>
+            <div class="vc-mid">
+              <div class="vc-avwrap">
+                <span class="vc-ring"></span><span class="vc-ring"></span><span class="vc-ring"></span>
+                <div class="vc-av" id="vcAv">子</div>
+              </div>
+              <div class="vc-nm" id="vcName">灵子</div>
+              <div class="vc-st" id="vcSt">● 通话中 · 余额充足可继续 <b>42 分钟</b></div>
+            </div>
+            <div class="vc-tip">🔒 通话端到端加密 · 咨询内容全程录音存证，可在「我的 → 订单」中回放与申诉</div>
+            <div class="vc-foot">
+              <div class="vc-btns">
+                <button class="vc-btn" data-act="vcmute"><span class="ic">🎙</span>静音</button>
+                <button class="vc-btn" data-act="vcspeaker"><span class="ic">🔊</span>免提</button>
+                <button class="vc-btn hang" data-act="vcend"><span class="ic">📵</span>挂断</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 12+ 视频通话 -->
+          <div class="scr vd" id="scr-video" data-sb="lt">
+            <div class="vd-stage">
+              <span class="vd-blob vd-b1"></span><span class="vd-blob vd-b2"></span>
+              <div class="vd-face">
+                <div class="em">🧑‍🏫</div>
+                <div class="nm" id="vdName">灵子</div>
+                <div class="sub">对方视频画面（演示占位）</div>
+              </div>
+            </div>
+            <div class="vd-top">
+              <button class="mn" data-act="vdend">‹</button>
+              <span class="tt">视频咨询中</span>
+              <span class="tm" id="vdTimer">00:00</span>
+            </div>
+            <div class="vd-pip" id="vdPip"><span class="me">我</span>我的画面</div>
+            <div class="vd-net"><i></i>网络良好 · 720P</div>
+            <div class="vd-foot">
+              <div class="vd-btns">
+                <button class="vc-btn" data-act="vcmute"><span class="ic">🎙</span>静音</button>
+                <button class="vc-btn" data-act="vdflip"><span class="ic">🔄</span>翻转</button>
+                <button class="vc-btn" data-act="vdbeauty"><span class="ic">✨</span>美颜</button>
+                <button class="vc-btn hang" data-act="vdend"><span class="ic">📵</span>挂断</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 13 心情日历 -->
+          <div class="scr cd" id="scr-calendar" data-sb="lt" data-nav="disc">
+            <div class="cd-head">
+              <div class="cd-hrow"><button data-act="toast" data-msg="再看上个月：原型从简" style="background:none;border:none;color:#fff">‹</button><span id="cdMonth">2026 - 10</span><button data-act="toast" data-msg="11 月数据生成中（演示）" style="background:none;border:none;color:#fff">›</button></div>
+            </div>
+            <div class="cd-body">
+              <div class="cd-card">
+                <div class="cd-grid">
+                  <span class="wk">日</span><span class="wk">一</span><span class="wk">二</span><span class="wk">三</span><span class="wk">四</span><span class="wk">五</span><span class="wk">六</span>
+                  <span class="dy"></span><span class="dy"></span><span class="dy"></span><span class="dy">1<span class="bu">补</span></span><span class="dy">2<span class="bu">补</span></span><span class="dy">3<span class="bu">补</span></span><span class="dy">4<span class="bu">补</span></span>
+                  <span class="dy">5<span class="bu">补</span></span><span class="dy">6<span class="bu">补</span></span><span class="dy">7<span class="bu">补</span></span><span class="dy">8<span class="bu">补</span></span><span class="dy">9<span class="bu">补</span></span><span class="dy">10<span class="bu">补</span></span><span class="dy">11<span class="bu">补</span></span>
+                  <span class="dy">12<span class="bu">补</span></span><span class="dy">13<span class="bu">补</span></span><span class="dy">14<span class="bu">补</span></span><span class="dy">15<span class="bu">补</span></span><span class="dy">16<span class="bu">补</span></span><span class="dy">17<span class="bu">补</span></span><span class="dy">18<span class="bu">补</span></span>
+                  <span class="dy">19<span class="bu">补</span></span><span class="dy">20<span class="bu">补</span></span><span class="dy">21<span class="bu">补</span></span><span class="dy">22<span class="bu">补</span></span><span class="dy">23<span class="bu">补</span></span><span class="dy today">24<span class="bu">补</span></span><span class="dy">25</span>
+                  <span class="dy">26</span><span class="dy">27</span><span class="dy">28</span><span class="dy">29</span><span class="dy">30</span><span class="dy">31</span><span class="dy"></span>
+                </div>
+              </div>
+              <div class="cd-stats">
+                <div class="h">本月心情统计</div>
+                <div class="cd-emo">
+                  <div class="e">😍<small>3天</small></div>
+                  <div class="e">😊<small>9天</small></div>
+                  <div class="e">😐<small>5天</small></div>
+                  <div class="e">😢<small>4天</small></div>
+                  <div class="e">😡<small>1天</small></div>
+                  <div class="e">🤯<small>2天</small></div>
+                  <div class="e">😴<small>3天</small></div>
+                  <div class="e">😭<small>2天</small></div>
+                </div>
+              </div>
+              <div class="cd-diary">
+                <span class="ill">📔</span>
+                <div><b>日记简述</b><small>用三句话，记住今天</small></div>
+                <button class="go" data-act="toast" data-msg="日记编辑器：原型从简">写一篇</button>
+              </div>
+            </div>
+            <button class="cd-write" data-act="mood">✏️ 记录今日心情</button>
+          </div>
+
+          <!-- 14 树洞社区 -->
+          <div class="scr fd" id="scr-treehole" data-nav="disc">
+            <div class="fd-tabs">
+              <button data-fdtab="follow">关注</button>
+              <button class="on" data-fdtab="rec">推荐</button>
+              <button data-fdtab="new">最新</button>
+            </div>
+            <div class="fd-body">
+              <button class="fd-mk" data-act="mkpost">说点心事，树洞会听见…<span class="go">✏️</span></button>
+              <div class="fd-post">
+                <div class="p-hd"><span class="p-av">匿</span><div><b>匿名用户<span class="anon">匿名</span></b><small>1小时前</small></div><i>···</i></div>
+                <p>凌晨三点又醒了。结婚五年，对话只剩「嗯」「好」「睡了」。是不是所有的婚姻最后都会变成这样？</p>
+                <div class="p-tag" data-act="go" data-to="treehole" style="cursor:pointer"># 情绪树洞 ›</div>
+                <div class="p-ft"><button data-act="like">👍 126</button><button data-act="toast" data-msg="评论区：原型从简">💬 48</button><button data-act="toast" data-msg="分享面板：原型从简">↗ 分享</button></div>
+              </div>
+              <div class="fd-post">
+                <div class="p-hd"><span class="p-av">月</span><div><b>祈月</b><small>3小时前</small></div><i>···</i></div>
+                <p>今天去把长发剪了。照镜子的瞬间突然觉得，放下一个人也没有那么难。🌙</p>
+                <div class="fd-img">今日份晚霞 · 点击查看大图</div>
+                <div class="p-tag" data-act="go" data-to="treehole" style="cursor:pointer"># 情绪树洞 ›</div>
+                <div class="p-ft"><button data-act="like">👍 342</button><button data-act="toast" data-msg="评论区：原型从简">💬 96</button><button data-act="toast" data-msg="分享面板：原型从简">↗ 分享</button></div>
+              </div>
+              <div class="fd-post">
+                <div class="p-hd"><span class="p-av">W</span><div><b>Ww</b><small>5小时前</small></div><i>···</i></div>
+                <p>连续记录心情第 21 天，综合分从 62 涨到 89。原来情绪真的可以被养回来。</p>
+                <div class="p-tag"># 疗愈打卡</div>
+                <div class="p-ft"><button data-act="like">👍 89</button><button data-act="toast" data-msg="评论区：原型从简">💬 12</button><button data-act="toast" data-msg="分享面板：原型从简">↗ 分享</button></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 04 弹窗 · 免费连线 -->
+          <div class="scr pp" id="scr-modal-free" data-sb="lt" data-ov="1">
+            <div class="pp-card">
+              <div class="pp-ill">
+                <svg viewBox="0 0 320 168" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <linearGradient id="ppg1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B5CF6"/><stop offset="1" stop-color="#4F35C9"/></linearGradient>
+                    <linearGradient id="ppg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF6E0"/><stop offset="1" stop-color="#FFD9A8"/></linearGradient>
+                  </defs>
+                  <rect width="320" height="168" fill="url(#ppg1)"/>
+                  <circle cx="36" cy="30" r="1.8" fill="#fff" opacity=".9"/><circle cx="66" cy="52" r="1.3" fill="#fff" opacity=".7"/>
+                  <circle cx="270" cy="26" r="2" fill="#fff" opacity=".8"/><circle cx="292" cy="58" r="1.3" fill="#fff" opacity=".6"/>
+                  <circle cx="24" cy="86" r="1.2" fill="#fff" opacity=".6"/><circle cx="300" cy="96" r="1.6" fill="#fff" opacity=".7"/>
+                  <path d="M125 168V72a35 35 0 0 1 70 0v96z" fill="url(#ppg2)"/>
+                  <ellipse cx="160" cy="166" rx="86" ry="10" fill="#3B2A9E" opacity=".35"/>
+                  <g fill="#3B2A9E" opacity=".92">
+                    <circle cx="132" cy="88" r="9.5"/><path d="M117 166v-44c0-9.5 6.5-15 15-15s15 5.5 15 15v44z"/>
+                    <circle cx="188" cy="88" r="9.5"/><path d="M173 166v-44c0-9.5 6.5-15 15-15s15 5.5 15 15v44z"/>
+                  </g>
+                  <path d="M160 44l2.4 5.6 5.6 2.4-5.6 2.4-2.4 5.6-2.4-5.6-5.6-2.4 5.6-2.4z" fill="#FFE9A8"/>
+                </svg>
+                <button class="pp-close" data-act="ovclose">✕</button>
+              </div>
+              <div class="pp-body">
+                <div class="t1">工作卡关？</div>
+                <div class="t2">别再盲目努力</div>
+                <div class="t3">老师即时解读，为你分析事业运势<br>与发展时机</div>
+                <div class="pp-avs">
+                  <span class="av" style="background:linear-gradient(135deg,#B36BFF,#6C4DF6)">芳</span>
+                  <span class="av" style="background:linear-gradient(135deg,#FFD98A,#FFB84D);color:#7A4E0E">曦</span>
+                  <span class="av" style="background:linear-gradient(135deg,#FF9AC4,#FF6FA5)">灵</span>
+                  <span>多位专业老师，满足你的不同需求</span>
+                </div>
+                <button class="pp-cta" data-act="go" data-to="list" data-ovclose="1">免费连线<span class="bd">专属福利</span></button>
+                <div class="pp-note">超 <b>10 万</b> 用户已经在这里找到方向</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 05 弹窗 · 测验入口 -->
+          <div class="scr pp" id="scr-modal-quiz" data-sb="lt" data-ov="1">
+            <div class="pp-card">
+              <div class="pp-ill">
+                <svg viewBox="0 0 320 168" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+                  <defs><linearGradient id="ppb1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4F8CFF"/><stop offset=".55" stop-color="#8B5CF6"/><stop offset="1" stop-color="#FF6FA5"/></linearGradient></defs>
+                  <rect width="320" height="168" fill="url(#ppb1)"/>
+                  <circle cx="40" cy="34" r="1.8" fill="#fff" opacity=".9"/><circle cx="72" cy="60" r="1.2" fill="#fff" opacity=".6"/>
+                  <circle cx="284" cy="30" r="1.8" fill="#fff" opacity=".8"/><circle cx="262" cy="66" r="1.2" fill="#fff" opacity=".6"/>
+                  <g>
+                    <circle cx="126" cy="84" r="31" fill="#FFD9B8"/>
+                    <path d="M95 84c0-20 14-32 31-32s31 12 31 32c0-6-8-10-14-12-4 5-24 8-34 2-8 3-14 7-14 12z" fill="#4A3A6E"/>
+                    <path d="M116 84q4 4 8 0M138 84q4 4 8 0" stroke="#4A3A6E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path d="M128 98q6 5 12 0" stroke="#C25E78" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                    <circle cx="108" cy="94" r="4" fill="#FFB3C7" opacity=".8"/><circle cx="152" cy="94" r="4" fill="#FFB3C7" opacity=".8"/>
+                  </g>
+                  <g>
+                    <circle cx="196" cy="80" r="29" fill="#FFC9A8"/>
+                    <path d="M167 82c-2-22 12-34 29-34s31 12 29 34c0 14-4 24-6 30-2-10-6-14-10-16 2 8 1 14-2 20-6-8-18-10-24-4-4-8-8-16-16-30z" fill="#2E2547"/>
+                    <path d="M186 80q4 4 8 0M208 80q4 4 8 0" stroke="#4A3A6E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path d="M196 94q6 5 12 0" stroke="#C25E78" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+                    <circle cx="178" cy="90" r="4" fill="#FFB3C7" opacity=".8"/><circle cx="220" cy="90" r="4" fill="#FFB3C7" opacity=".8"/>
+                  </g>
+                  <path d="M161 58c3-6 12-6 14 0 2 7-5 12-7 14-2-2-9-7-7-14z" fill="#FF8AB0"/>
+                  <path d="M52 96c2-5 10-5 12 0 1 6-4 10-6 12-2-2-7-6-6-12z" fill="#FF8AB0" opacity=".85"/>
+                  <path d="M262 108c2-5 10-5 12 0 1 6-4 10-6 12-2-2-7-6-6-12z" fill="#FF8AB0" opacity=".7"/>
+                </svg>
+                <button class="pp-close" data-act="ovclose">✕</button>
+              </div>
+              <div class="pp-body">
+                <div class="t1">暧昧真心指数？</div>
+                <div class="t2">别被氛围骗了</div>
+                <div class="t3">你是真的遇见真心，<br>还是只是迷恋暧昧氛围？</div>
+                <button class="pp-cta" style="background:linear-gradient(135deg,#4F8CFF,#7B5CFF)" data-act="quizstart" data-ovclose="1">开始测验 →</button>
+                <div class="pp-note">已有 <b>128,406</b> 人完成测试</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 09 筛选弹层 -->
+          <div class="scr fl" id="scr-sheet-filter" data-sb="lt" data-ov="1">
+            <div class="sheet">
+              <div class="st">筛选</div>
+              <div class="sx">
+                <div class="h">祈求</div>
+                <div class="chips" data-fgroup="wish">
+                  <button class="dc on" data-i="0">不限</button><button class="dc" data-i="1">婚姻情感</button><button class="dc" data-i="2">事业</button><button class="dc" data-i="3">财运</button>
+                  <button class="dc" data-i="4">风水堪舆</button><button class="dc" data-i="5">起名改名</button><button class="dc" data-i="6">择日</button><button class="dc" data-i="7">合婚</button>
+                </div>
+              </div>
+              <div class="sx">
+                <div class="h">学术</div>
+                <div class="chips" data-fgroup="school">
+                  <button class="dc on" data-i="0">不限</button><button class="dc" data-i="1">八字</button><button class="dc" data-i="2">紫微</button><button class="dc" data-i="3">六爻</button>
+                  <button class="dc" data-i="4">占星</button><button class="dc" data-i="5">塔罗</button><button class="dc" data-i="6">心理咨询</button><button class="dc" data-i="7">身心灵疗愈</button>
+                </div>
+              </div>
+              <button class="btn-bk" data-act="filterapply">確 認</button>
+            </div>
+          </div>
+
+          <div class="toast" id="toast"></div>
+
+          <!-- 登录层（云服务 · 手机号验证码 / 微信） -->
+          <div class="lg-mask" id="lgMask">
+            <div class="lg-sheet" style="position:relative">
+              <button class="lg-x" data-act="lgclose">✕</button>
+              <div class="lg-t">登录芳芳</div>
+              <div class="lg-s">登录后可保存心情记录、测验报告、咨询预约，树洞发帖与点赞也会同步到你的账号。</div>
+              <div class="lg-f">
+                <label>手机号</label>
+                <div class="lg-inp">
+                  <input id="lgPhone" type="tel" maxlength="11" placeholder="请输入 11 位手机号" autocomplete="tel">
+                </div>
+              </div>
+              <div class="lg-f">
+                <label>验证码</label>
+                <div class="lg-inp">
+                  <input id="lgCode" type="tel" maxlength="6" placeholder="6 位验证码" autocomplete="one-time-code">
+                  <button class="lg-code" id="lgSend" type="button">获取验证码</button>
+                </div>
+              </div>
+              <div class="lg-err" id="lgErr"></div>
+              <button class="lg-btn" id="lgBtn" type="button">登 录</button>
+              <div class="lg-or">其他方式</div>
+              <button class="lg-wx" id="lgWx" type="button">💬 微信登录</button>
+              <div class="lg-cloud"><i></i>已连接芳芳云服务 · 验证码由平台发送</div>
+              <div class="lg-tip">登录即代表同意 <b>《用户协议》</b> 与 <b>《隐私政策》</b><br>未注册的手机号将自动创建账号</div>
+            </div>
+          </div>
+
+          <!-- 树洞发帖层 -->
+          <div class="mk-mask" id="mkMask">
+            <div class="mk-sheet" style="position:relative">
+              <button class="lg-x" data-act="mkclose">✕</button>
+              <div class="mk-t">说点心事，树洞会听见…</div>
+              <textarea class="mk-ta" id="mkText" maxlength="200" placeholder="匿名写下此刻的心情，云端会帮你保存（最多 200 字）"></textarea>
+              <div class="mk-row">
+                <input class="mk-tag" id="mkTag" maxlength="10" placeholder="话题标签，如：情绪树洞">
+                <button class="mk-go" id="mkGo" type="button">发布</button>
+              </div>
+              <div class="lg-tip">内容仅你自己可见管理 · 发布后同步到芳芳云</div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <p style="text-align:center;font-size:11.5px;color:#A79FC9;margin-top:4px">iPhone 14 · 375×812 逻辑分辨率 · 支持 Esc 返回上一页</p>
+    </div>
+    <div class="stage-r">
+      <div class="console">
+        <h3>演示控制台</h3>
+        <p class="tip">左边手机里的每个按钮、卡片、弹窗都是热的。也可以从下面地图一键直达某个页面。</p>
+        <div class="cur-page"><span class="dot"></span><b id="curName">开屏品牌页</b><small id="curNo">01 / 16</small></div>
+        <div class="map-cap">主线体验</div>
+        <div class="map-grid">
+          <button class="map-btn" data-goto="splash"><span class="no">01</span>开屏品牌页</button>
+          <button class="map-btn" data-goto="home"><span class="no">02</span>首页 · 命理服务</button>
+          <button class="map-btn" data-goto="disc"><span class="no">03</span>发现 · 今日心情</button>
+          <button class="map-btn" data-goto="modal-free"><span class="no hot">04</span>弹窗 · 免费连线</button>
+          <button class="map-btn" data-goto="modal-quiz"><span class="no hot">05</span>弹窗 · 测验入口</button>
+          <button class="map-btn" data-goto="quiz"><span class="no">06</span>测验 · 答题</button>
+          <button class="map-btn" data-goto="result"><span class="no">07</span>测验 · 结果预览</button>
+        </div>
+        <div class="map-cap">咨询变现链路</div>
+        <div class="map-grid">
+          <button class="map-btn" data-goto="list"><span class="no">08</span>咨询师列表</button>
+          <button class="map-btn" data-goto="sheet-filter"><span class="no hot">09</span>弹层 · 筛选</button>
+          <button class="map-btn" data-goto="detail"><span class="no">10</span>咨询师详情</button>
+          <button class="map-btn" data-goto="booking"><span class="no hot">11</span>预约 · 选时支付</button>
+          <button class="map-btn" data-goto="chat"><span class="no">12</span>咨询室 · 聊天</button>
+          <button class="map-btn" data-goto="calling"><span class="no hot">13</span>连线 · 呼叫等待</button>
+          <button class="map-btn" data-goto="voice"><span class="no hot">14</span>语音通话</button>
+          <button class="map-btn" data-goto="video"><span class="no hot">15</span>视频通话</button>
+        </div>
+        <div class="map-cap">心灵留存链路</div>
+        <div class="map-grid">
+          <button class="map-btn" data-goto="calendar"><span class="no">16</span>心情日历</button>
+          <button class="map-btn" data-goto="treehole"><span class="no">17</span>树洞社区</button>
+          <button class="map-btn" data-goto="msg"><span class="no">18</span>消息中心</button>
+          <button class="map-btn" data-goto="me"><span class="no">19</span>我的 · 钱包</button>
+        </div>
+        <div class="map-cap">推荐试这条线</div>
+        <ul class="try-list">
+          <li>首页 → 点「测试」宫格 → 免费连线弹窗 → 直达列表</li>
+          <li>列表 → 筛选（祈求×学术）→ 点卡片进详情 → 预约支付</li>
+          <li>详情 →「连线」→ 呼叫等待 2 秒自动接通 → 语音 / 视频通话 → 挂断</li>
+          <li>发现 → 疗愈之旅 → 答 6 题 → 看结果 → ¥9.9 解锁</li>
+          <li>咨询室里真的能打字发消息，对方会回你；📞📹 可直接发起通话</li>
+        </ul>
+        <button class="reset" id="resetBtn">↺ 重置原型（回到开屏）</button>
+      </div>
+      <p class="stage-note">提示：心情记录 / 测验报告 / 预约订单 / 咨询聊天 / 树洞帖子与点赞<b style="color:#6C4DF6">已接入芳芳云服务</b>——手机号登录后真实保存，刷新不丢失；支付与解锁仍为模拟流程。键盘 Esc = 返回上一页。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 产品定位 ================= -->
+<section id="s1">
+  <div class="sec-h"><span class="no">01</span><h2>产品定位</h2><span class="en">POSITIONING</span></div>
+  <div class="panel">
+    <h3>一句话定位</h3>
+    <p>面向 18–40 岁泛玄学兴趣人群（女性为主）的<b style="color:#6C4DF6">一站式心灵命理服务平台</b>：用免费测算与内容引流，用专业咨询（命理师 + 心理咨询师）变现，用心情记录与树洞社区提升留存。</p>
+    <div class="grid3" style="margin-top:18px">
+      <div class="mini-card"><div class="ic">🔮</div><b>玄学命理 · 引流层</b><p>八字排盘、塔罗、紫微、星盘、趣味测试（如「暧昧真心指数」）。免费轻量，负责拉新与裂变。</p></div>
+      <div class="mini-card"><div class="ic">💬</div><b>专业咨询 · 变现层</b><p>命理师 / 情感咨询师 / 心理咨询师入驻，按小时预约或即时连线，平台抽成 15%–25%。</p></div>
+      <div class="mini-card"><div class="ic">🌱</div><b>心灵疗愈 · 留存层</b><p>每日心情评分、心情日历、7 天疗愈之旅、树洞社区与文章内容，形成日活与复访。</p></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>两份参考资料 → 一个融合产品</h3>
+    <table class="tbl">
+      <tr><th style="width:110px">参考来源</th><th style="width:230px">内容特征</th><th>融合决策</th></tr>
+      <tr><td><b>产品截图 ×6</b><br><span style="color:#A79FC9">繁体 / US$ 计价</span></td><td>命理咨询平台：首页、Live&Oncall 直播预约、咨询师列表与筛选、营销弹窗、测验入口</td><td rowspan="2">合并为一个 App：<b>「首页 = 命理服务 + 直播预约」「发现 = 心灵成长 + 树洞社区」</b>；语言与货币做成配置级切换（大陆简体/¥，海外繁体/US$）</td></tr>
+      <tr><td><b>实录视频 ×1</b><br><span style="color:#A79FC9">简体</span></td><td>心情日记 + 倾诉咨询：今日心情评分、疗愈之旅、树洞帖子、心情日历、倾诉老师列表</td></tr>
+    </table>
+  </div>
+  <div class="panel">
+    <h3>商业模式与合规提示</h3>
+    <table class="tbl">
+      <tr><th style="width:150px">模块</th><th>说明</th></tr>
+      <tr><td><span class="pill">咨询抽成</span></td><td>核心收入：咨询师时薪（¥25–98/小时）+ 平台服务费；新人 3 分钟免费额度用于首单转化。</td></tr>
+      <tr><td><span class="pill">测试报告</span></td><td>免费答 6 题看简版结果，完整报告 ¥9.9 解锁，可叠加「老师解读」增值服务。</td></tr>
+      <tr><td><span class="pill">会员订阅</span></td><td>月度会员：免费连线时长、报告折扣、隐身逛社区、专属老师推荐。</td></tr>
+      <tr><td><span class="pill">内容合规</span></td><td>命理类内容标注「娱乐 / 传统文化参考」；心理咨询师须公示资质编号，危机关键词（自伤等）触发人工干预与求助热线。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= 02 信息架构 ================= -->
+<section id="s2">
+  <div class="sec-h"><span class="no">02</span><h2>信息架构</h2><span class="en">INFORMATION ARCHITECTURE</span></div>
+  <div class="panel">
+    <div class="tree">
+      <ul>
+        <li class="root"><span class="lg">芳</span>芳芳 App<div style="font-size:10.5px;color:#A79FC9;font-weight:500;margin:2px 0 6px">底部导航：首页 / 发现 / ＋ / 消息 / 我的（原型按五宫格排布，「媒体」内容流并入发现）</div></li>
+        <li><span class="t2">🏠 首页（命理服务）</span>
+          <ul>
+            <li>提问搜索框（八字 / 塔罗 / 紫微）</li>
+            <li>今日能量 · 八字排盘</li>
+            <li>分类宫格：测试 / 塔罗 / 星盘 / 趣味 / 祈福 / 心理</li>
+            <li>Live&Oncall 直播预约（新人 3 分钟免费）</li>
+            <li>推荐老师（筛选：专属推荐 / 星级名师 / 婚姻情感）</li>
+          </ul>
+        </li>
+        <li><span class="t2">📺 媒体（内容）</span>
+          <ul><li>文章流（情感 / 事业 / 疗愈）</li><li>文章详情（咨询师署名）</li></ul>
+        </li>
+        <li><span class="t2">🧪 测算与测试</span>
+          <ul><li>测验入口（弹窗 / 宫格）</li><li>答题流程（6 题）</li><li>结果预览 → 付费解锁完整报告</li></ul>
+        </li>
+        <li><span class="t2">💬 咨询</span>
+          <ul>
+            <li>咨询师列表（筛选：祈求 × 学术）</li>
+            <li>咨询师详情（资质 / 服务 / 评价）</li>
+            <li>预约选时 → 支付 → 咨询室</li>
+            <li>即时连线：呼叫等待 → 语音 / 视频通话（静音 / 免提 / 翻转 / 美颜 / 挂断）</li>
+          </ul>
+        </li>
+        <li><span class="t2">🌱 发现（心灵成长）</span>
+          <ul>
+            <li>今日心情（感情 / 财富 / 事业 / 综合分）</li>
+            <li>心情日历 · 本月统计 · 日记简述 · 签到补签</li>
+            <li>7 天疗愈之旅</li>
+            <li>树洞社区（关注 / 推荐 / 最新）</li>
+          </ul>
+        </li>
+        <li><span class="t2">✉️ 消息</span>
+          <ul><li>会话列表（咨询助手 / 系统通知）</li><li>预约提醒 · 连线到期提醒</li></ul>
+        </li>
+        <li><span class="t2">👤 我的</span>
+          <ul>
+            <li>钱包充值 · 订单 / 预约记录</li>
+            <li>收藏 · 心情日记 · 我的报告</li>
+            <li>会员中心 · 邀请好友 · 设置</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 设计系统 ================= -->
+<section id="s3">
+  <div class="sec-h"><span class="no">03</span><h2>设计系统</h2><span class="en">DESIGN SYSTEM</span></div>
+  <div class="panel">
+    <h3>色彩</h3>
+    <div class="sw-row">
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#8B5CF6,#6C4DF6)"></div><div class="t">品牌紫<small>#6C4DF6 → #8B5CF6</small></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#B36BFF,#6C4DF6)"></div><div class="t">渐变紫<small>#B36BFF → #6C4DF6</small></div></div>
+      <div class="sw"><div class="c" style="background:#FF6FA5"></div><div class="t">品红<small>#FF6FA5 · 感情线</small></div></div>
+      <div class="sw"><div class="c" style="background:#FFB84D"></div><div class="t">暖金<small>#FFB84D · 财富线</small></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#FF8A3C,#FF5A3C)"></div><div class="t">朱橙<small>#FF5A3C · 价格/主 CTA</small></div></div>
+      <div class="sw"><div class="c" style="background:linear-gradient(135deg,#19C37D,#0FA968)"></div><div class="t">青绿<small>#12B76A · 连线/在线</small></div></div>
+    </div>
+    <div class="sw-row" style="margin-top:12px;grid-template-columns:repeat(4,1fr)">
+      <div class="sw"><div class="c" style="background:#1B1333"></div><div class="t">墨色<small>#1B1333 · 主文字</small></div></div>
+      <div class="sw"><div class="c" style="background:#8A83A6"></div><div class="t">次级灰<small>#8A83A6 · 辅助文字</small></div></div>
+      <div class="sw"><div class="c" style="background:#EFEBF7"></div><div class="t">分隔线<small>#EFEBF7</small></div></div>
+      <div class="sw"><div class="c" style="background:#F6F5FB"></div><div class="t">页面底<small>#F6F5FB</small></div></div>
+    </div>
+  </div>
+  <div class="panel">
+    <h3>字体与控件规范</h3>
+    <table class="tbl">
+      <tr><th style="width:190px">用途</th><th>规范</th></tr>
+      <tr><td>页面大标题</td><td>20–24px / 800 / 字距 -0.3</td></tr>
+      <tr><td>卡片标题</td><td>15–17px / 800</td></tr>
+      <tr><td>正文</td><td>13–14px / 400 / 行高 1.6–1.75</td></tr>
+      <tr><td>辅助说明</td><td>11px / 500 / #8A83A6</td></tr>
+      <tr><td>价格数字</td><td>16–22px / 800 / #FF5A3C / 等宽数字</td></tr>
+    </table>
+    <p style="margin-top:14px">字体：PingFang SC / Noto Sans SC；圆角：卡片 16–18、弹层 26、胶囊 999；阴影：0 6–12px rgba(31,20,80,.05–.10)；图标：圆角方块底 + 线性/面性混用；插画：紫粉渐变 + 暖金点缀的「星空疗愈」风。品牌吉祥物为「命理师小机器人」（开屏与首页右上角）。</p>
+  </div>
+</section>
+
+<!-- ================= 04 核心流程 ================= -->
+<section id="s4">
+  <div class="sec-h"><span class="no">04</span><h2>核心流程</h2><span class="en">KEY FLOWS</span></div>
+  <div class="panel">
+    <div class="flow-cap">流程 A · 咨询变现主链路（新用户 → 首单）</div>
+    <div class="flow">
+      <span class="fnode">开屏新人礼包</span><span class="farr">→</span>
+      <span class="fnode">首页</span><span class="farr">→</span>
+      <span class="fnode">免费连线弹窗</span><span class="farr">→</span>
+      <span class="fnode hot">咨询师列表</span><span class="farr">→</span>
+      <span class="fnode">筛选</span><span class="farr">→</span>
+      <span class="fnode">咨询师详情</span><span class="farr">→</span>
+      <span class="fnode">选服务 / 时间</span><span class="farr">→</span>
+      <span class="fnode pay">支付</span><span class="farr">→</span>
+      <span class="fnode">咨询室</span><span class="farr">→</span>
+      <span class="fnode">评价 / 复购</span>
+    </div>
+    <div class="flow-cap">流程 B · 即时连线链路（高意向 → 实时通话）</div>
+    <div class="flow">
+      <span class="fnode">列表 / 详情 / 咨询室</span><span class="farr">→</span>
+      <span class="fnode hot">点「连线 / 📞 / 📹」</span><span class="farr">→</span>
+      <span class="fnode">呼叫等待（可改用视频）</span><span class="farr">→</span>
+      <span class="fnode hot">自动接通 · 语音 / 视频</span><span class="farr">→</span>
+      <span class="fnode">计时计费</span><span class="farr">→</span>
+      <span class="fnode">挂断 · 评价 / 售后</span>
+    </div>
+    <div class="flow-cap">流程 C · 测验引流链路（拉新 / 裂变）</div>
+    <div class="flow">
+      <span class="fnode">入口（弹窗 / 宫格 / 分享）</span><span class="farr">→</span>
+      <span class="fnode">答 6 题</span><span class="farr">→</span>
+      <span class="fnode hot">结果预览（分数 + 简评）</span><span class="farr">→</span>
+      <span class="fnode pay">¥9.9 解锁完整报告</span><span class="farr">→</span>
+      <span class="fnode">完整报告</span><span class="farr">→</span>
+      <span class="fnode">老师解读（二次转化）</span>
+    </div>
+    <div class="flow-cap">流程 D · 心灵留存链路（日活 / 复访）</div>
+    <div class="flow">
+      <span class="fnode">今日心情评分</span><span class="farr">→</span>
+      <span class="fnode">记录心情 / 签到</span><span class="farr">→</span>
+      <span class="fnode">心情日历 · 月度统计</span><span class="farr">→</span>
+      <span class="fnode">写日记简述</span><span class="farr">→</span>
+      <span class="fnode hot">7 天疗愈之旅</span><span class="farr">→</span>
+      <span class="fnode">树洞社区互动</span><span class="farr">→</span>
+      <span class="fnode">文章 / 咨询转化</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 05 页面清单 ================= -->
+<section id="s5">
+  <div class="sec-h"><span class="no">05</span><h2>页面清单与交互说明</h2><span class="en">SCREENS & INTERACTIONS</span></div>
+  <div class="panel">
+    <table class="tbl">
+      <tr><th style="width:44px">#</th><th style="width:150px">页面</th><th>原型里可以点什么</th></tr>
+      <tr><td><b>01</b></td><td>开屏品牌页</td><td>「跳过」立即进首页；不点 1.6 秒自动进入</td></tr>
+      <tr><td><b>02</b></td><td>首页（命理）</td><td>搜索框 / 今日能量 / 八字排盘 → 提示；宫格「测试、趣味」→ 测验弹窗，「塔罗、星盘、心理」→ 咨询师列表；Live 卡片 → 预约提醒；老师卡「咨询」→ 详情；右上角吉祥物 → 免费连线弹窗</td></tr>
+      <tr><td><b>03</b></td><td>发现（心灵）</td><td>📅 → 心情日历；疗愈之旅 banner → 测验；推荐/文章 Tab 切换；帖子点赞可点亮</td></tr>
+      <tr><td><b>04</b></td><td>弹窗 · 免费连线</td><td>✕ 关闭；「免费连线」→ 直达咨询师列表</td></tr>
+      <tr><td><b>05</b></td><td>弹窗 · 测验入口</td><td>✕ 关闭；「开始测验」→ 答题流程</td></tr>
+      <tr><td><b>06</b></td><td>测验答题</td><td>选项单选、下一题推进、上一题回退、进度条实时走；答完进结果</td></tr>
+      <tr><td><b>07</b></td><td>测验结果</td><td>「¥9.9 解锁」→ 模拟支付解锁；返回重答</td></tr>
+      <tr><td><b>08</b></td><td>咨询师列表</td><td>「筛选 ▾」→ 筛选弹层；四个 Tab 切换分类；卡片 → 详情</td></tr>
+      <tr><td><b>09</b></td><td>筛选弹层</td><td>祈求 × 学术双组点选；确认后真实过滤列表</td></tr>
+      <tr><td><b>10</b></td><td>咨询师详情</td><td>收藏 ♡ 可点亮；「连线」→ 呼叫等待页，2 秒自动接通语音（可改用视频）；「咨询」→ 预约支付弹层</td></tr>
+      <tr><td><b>11</b></td><td>预约支付</td><td>服务 / 日期 / 时间 / 支付方式点选，实付金额实时计算；确认支付 → 进咨询室</td></tr>
+      <tr><td><b>12</b></td><td>咨询室</td><td>输入框真能打字发消息，对方会自动回复；快捷问句一键发送；计时器倒数；📞 / 📹 可直接发起语音 / 视频通话</td></tr>
+      <tr><td><b>13</b></td><td>呼叫等待</td><td>「连线」后进入：头像光环脉动 + 等待动画，倒计时 2 秒自动接通；可一键「改用视频 / 语音呼叫」；✕ 取消返回</td></tr>
+      <tr><td><b>14</b></td><td>语音通话</td><td>接通后计时走表（mm:ss）；静音 / 免提按钮可点亮；挂断 → 返回并提示「通话结束 · 去评价送 5 积分」；通话中按 Esc = 挂断</td></tr>
+      <tr><td><b>15</b></td><td>视频通话</td><td>全屏通话画面 + 右下角「我的画面」小窗；静音 / 翻转（小窗左右换边）/ 美颜可点亮；网络状态标；挂断同上</td></tr>
+      <tr><td><b>16</b></td><td>心情日历</td><td>月份切换提示；「记录今日心情」→ <b>登录后真实写入云端</b>（再次点击可更新当天分数）</td></tr>
+      <tr><td><b>17</b></td><td>树洞社区</td><td>关注/推荐/最新 Tab；<b>帖子从云端实时加载</b>；「说点心事」→ 登录后真实发帖；点赞真实同步（再次点击取消）</td></tr>
+      <tr><td><b>18</b></td><td>消息中心</td><td>消息/通知 Tab；「咨询助手」「系统消息」→ 直达咨询室 / 报告</td></tr>
+      <tr><td><b>19</b></td><td>我的</td><td>头像区 → 登录 / 账号信息；「我的预约」「我的报告」→ 读取云端真实记录；「退出登录」；钱包 / 订单 / 收藏 / 邀请为演示反馈</td></tr>
+      <tr><td><b>＋</b></td><td>登录（云服务）</td><td>未登录点任意需存档功能会弹出登录层：<b>手机号验证码</b>（主）或 <b>微信登录</b>；登录后自动继续刚才的操作</td></tr>
+    </table>
+  </div>
+  <div class="panel">
+    <h3>交付说明与下一步</h3>
+    <table class="tbl">
+      <tr><th style="width:170px">事项</th><th>说明</th></tr>
+      <tr><td><b>本稿范围</b></td><td>可点击交互原型（19 页）+ 高保真界面 + 信息架构 + 设计系统 + 核心流程。已接入云服务：心情记录、测验报告、预约订单、咨询聊天、树洞帖子与点赞在手机号登录后<b>真实持久化</b>；支付、解锁、实时音视频通话为模拟流程（正式版建议腾讯云 TRTC / 声网 SDK）。</td></tr>
+      <tr><td><b>市场适配</b></td><td>当前按大陆市场输出简体中文 + ¥ 计价。参考原作（繁体 / US$）面向港台与海外华人：语言、货币、时区、支付渠道均为配置级切换，可低成本出海外版。</td></tr>
+      <tr><td><b>建议下一步 ①</b></td><td>朋友试用本原型后收集反馈，确定页面优先级与文案，再进入开发排期。</td></tr>
+      <tr><td><b>建议下一步 ②</b></td><td>技术选型：跨端优先 Flutter / React Native；直播与 IM 建议接入腾讯云 / 声网 SDK，不必自研。</td></tr>
+      <tr><td><b>建议下一步 ③</b></td><td>后台模块拆分：用户体系、咨询师入驻与结算、订单与支付、内容 CMS、直播调度、消息推送、风控与内容审核。</td></tr>
+      <tr><td><b>合规红线</b></td><td>命理内容加「娱乐 / 传统文化参考」声明；心理咨询师资质公示；危机词（自伤 / 轻生）触发人工介入并展示心理援助热线；未成年人消费限制。</td></tr>
+    </table>
+  </div>
+</section>
+
+<div class="foot">
+  <b>「芳芳」App 交互原型</b> · 基于实录视频与产品截图整理 · 375×812 逻辑分辨率<br>
+  原型：Tom（AI 搭档）· 2026-10-24 · 供 Jeffrey 与其朋友评审使用
+</div>
+
+
+</div>
+<script>
+(function(){
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+
+  /* ---------- 状态栏 / home 指示 / 底部导航注入 ---------- */
+  var sig = '<svg width="17" height="11" viewBox="0 0 17 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="6" rx="1"/><rect x="9" y="2.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="0" width="3" height="11" rx="1"/></svg>';
+  var wifi = '<svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 10.2 0.6 3.3C2.4 1.9 4.9 1.1 7.5 1.1s5.1.8 6.9 2.2L7.5 10.2z"/></svg>';
+  var bat = '<svg width="23" height="11" viewBox="0 0 23 11" fill="none"><rect x=".5" y=".5" width="19" height="10" rx="3.2" stroke="currentColor" opacity=".38"/><rect x="2.2" y="2.2" width="13" height="6.6" rx="1.6" fill="currentColor"/><path d="M21 3.6v3.8c1.1-.4 1.1-3.4 0-3.8z" fill="currentColor" opacity=".38"/></svg>';
+  var ico = {
+    home:'<svg viewBox="0 0 24 24"><path d="M4 11.4 12 4l8 7.4V20a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z" fill="currentColor"/></svg>',
+    disc:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="currentColor"/><path d="m15.6 8.4-2.1 5.1-5.1 2.1 2.1-5.1z" fill="#fff"/></svg>',
+    msg:'<svg viewBox="0 0 24 24"><path d="M12 4c5 0 9 3.4 9 7.6 0 4.2-4 7.6-9 7.6-1 0-2-.14-2.9-.4L5 21l1.3-3.4C4.6 16.2 3 14.1 3 11.6 3 7.4 7 4 12 4z" fill="currentColor"/></svg>',
+    me:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.2" fill="currentColor"/><path d="M12 14c-4.6 0-8 2.6-8 5.8V21h16v-1.2c0-3.2-3.4-5.8-8-5.8z" fill="currentColor"/></svg>'
+  };
+  var TABS = [{k:'home',t:'首页'},{k:'disc',t:'发现'},{k:'msg',t:'消息'},{k:'me',t:'我的'}];
+  $$('.scr').forEach(function(scr){
+    var light = scr.getAttribute('data-sb') === 'lt';
+    var sb = document.createElement('div');
+    sb.className = 'sb' + (light ? ' lt' : '');
+    sb.innerHTML = '<span>13:31</span><span class="sbi">' + sig + wifi + bat + '</span>';
+    scr.insertBefore(sb, scr.firstChild);
+    var hi = document.createElement('div');
+    hi.className = 'hi' + (light ? ' lt' : '');
+    scr.appendChild(hi);
+    var active = scr.getAttribute('data-nav');
+    if (active) {
+      var nav = document.createElement('div');
+      nav.className = 'nav';
+      var h = '';
+      TABS.forEach(function(t, i){
+        if (i === 2) h += '<button class="plus" data-act="plus"><b>+</b></button>';
+        h += '<button class="it' + (t.k === active ? ' on' : '') + '" data-act="tab" data-to="' + t.k + '">' + ico[t.k] + '<span>' + t.t + '</span></button>';
+      });
+      nav.innerHTML = h;
+      scr.appendChild(nav);
+    }
+  });
+
+  /* ---------- Toast ---------- */
+  var toastEl = $('#toast'), toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* ---------- 路由引擎 ---------- */
+  var PAGES = {
+    splash:'开屏品牌页', home:'首页 · 命理服务', disc:'发现 · 今日心情', msg:'消息中心', me:'我的 · 钱包',
+    quiz:'测验 · 答题', result:'测验 · 结果预览', list:'咨询师列表', detail:'咨询师详情',
+    booking:'预约 · 选时支付', chat:'咨询室 · 聊天', calling:'连线 · 呼叫等待', voice:'语音通话', video:'视频通话',
+    calendar:'心情日历', treehole:'树洞社区',
+    'modal-free':'弹窗 · 免费连线', 'modal-quiz':'弹窗 · 测验入口', 'sheet-filter':'弹层 · 筛选'
+  };
+  var stack = [], curTab = 'home', curName = 'splash';
+  /* 页面编号与右侧控制台地图保持一致（弹层页排在线路中） */
+  var PAGE_ORDER = ['splash','home','disc','modal-free','modal-quiz','quiz','result','list','sheet-filter','detail','booking','chat','calling','voice','video','calendar','treehole','msg','me'];
+  function show(id, dir){
+    var el = $('#scr-' + id);
+    if (!el) return;
+    $$('.scr').forEach(function(s){ s.classList.remove('act','anime','anime-back'); });
+    el.classList.add('act');
+    if (dir === 'back') el.classList.add('anime-back'); else el.classList.add('anime');
+    curName = id;
+    var n = PAGES[id] || id;
+    var _cn = $('#curName'); if (_cn) _cn.textContent = n;
+    var oi = PAGE_ORDER.indexOf(id);
+    var _cno = $('#curNo'); if (_cno) _cno.textContent = (oi >= 0 ? (oi + 1) : '—') + ' / 19';
+    if (id === 'treehole') fdLoad();
+    if (id === 'chat') ctLoad();
+    if (id === 'calendar') cdLoad();
+    if (id !== 'calling') { clearTimeout(cgInt); cgInt = null; }
+    if (id !== 'voice') { clearInterval(vcInt); vcInt = null; }
+    if (id !== 'video') { clearInterval(vdInt); vdInt = null; }
+  }
+  function go(id){
+    if (id === curTab) { stack = [curTab]; show(id); return; }
+    stack.push(curName === 'splash' ? curTab : curName);
+    if (['home','disc','msg','me'].indexOf(id) >= 0) { curTab = id; stack = [id]; }
+    show(id);
+  }
+  function back(){
+    var prev = stack.pop() || 'home';
+    if (['home','disc','msg','me'].indexOf(prev) >= 0) curTab = prev;
+    show(prev, 'back');
+  }
+  function openOv(id){ $('#scr-' + id).classList.add('act'); }
+  function closeOv(id){ $('#scr-' + id).classList.remove('act'); }
+
+  /* ---------- 咨询师数据 ---------- */
+  var TEACHERS = [
+    {name:'阿赞王', av:'王', bg:'linear-gradient(135deg,#B36BFF,#6C4DF6)', st:'★4.9 · 1447 · 从业 11 年', price:68, wish:3, school:7, cat:'star', online:true, mt:'负能量消除、职业规划'},
+    {name:'易弘阳', av:'阳', bg:'linear-gradient(135deg,#FF9AC4,#FF6FA5)', st:'★5.0 · 1022 · 从业 37 年', price:29, wish:1, school:1, cat:'love', online:true, mt:'恋爱情感、职业规划'},
+    {name:'梦婷', av:'婷', bg:'linear-gradient(135deg,#B36BFF,#6C4DF6)', st:'★4.9 · 7年经验', price:68, wish:1, school:4, cat:'love', online:true, mt:'感情变化、工作变动'},
+    {name:'艾石', av:'石', bg:'linear-gradient(135deg,#4F8CFF,#7B5CFF)', st:'暂无评分 · 16年', price:29, wish:2, school:6, cat:'star', online:true, mt:'职业规划、个人成长'},
+    {name:'噜呐 Luna', av:'L', bg:'linear-gradient(135deg,#FF9AC4,#FF6FA5)', st:'暂无评分 · 8年', price:68, wish:1, school:6, cat:'love', online:false, mt:'找对象、恋情提升'},
+    {name:'灵子', av:'子', bg:'linear-gradient(135deg,#FFD98A,#FFB84D)', st:'★5.0 · 9443 · 15年', price:25, wish:2, school:1, cat:'star', online:true, mt:'人生分析 · 命理占卜'}
+  ];
+  var lsTab = 'star', fFilter = {wish:0, school:0}, curTeacher = 5;
+  function lsRender(){
+    var grid = $('#lsGrid');
+    var list = TEACHERS.filter(function(t){
+      if (lsTab === 'star' && t.cat !== 'star') return false;
+      if (lsTab === 'love' && t.wish !== 1) return false;
+      if (lsTab === 'tarot' && t.school !== 5 && t.school !== 4) return false;
+      if (fFilter.wish && t.wish !== fFilter.wish) return false;
+      if (fFilter.school && t.school !== fFilter.school) return false;
+      return true;
+    });
+    if (!list.length) { grid.innerHTML = '<div class="ls-empty">没有符合条件的老师，换个筛选条件试试</div>'; return; }
+    grid.innerHTML = list.map(function(t){
+      var i = TEACHERS.indexOf(t);
+      return '<button class="lscard" data-act="go" data-to="detail" data-teacher="' + i + '">' +
+        '<div class="av" style="background:' + t.bg + ';color:' + (t.av === '子' || t.av === '石' ? '#7A4E0E' : '#fff') + '">' + t.av + '<i class="dot ' + (t.online ? 'onl' : 'off') + '"></i></div>' +
+        '<div class="lscard-nm">' + t.name + '</div>' +
+        '<div class="lscard-st">' + t.st.split(' · ')[0] + ' <i>· ' + (t.st.split(' · ')[2] || t.st.split(' · ')[1]) + '</i></div>' +
+        '<div class="lscard-mt">' + t.mt + '</div>' +
+        '<div class="lscard-pr"><b>¥</b>' + t.price.toFixed(2) + '<small>起/小时</small></div>' +
+        '<span class="btn ' + (t.online ? 'btn-gr' : 'btn-bk') + '">' + (t.online ? '连线' : '咨询') + '</span>' +
+      '</button>';
+    }).join('');
+  }
+
+  /* ---------- 详情填充 ---------- */
+  function detailFill(i){
+    var t = TEACHERS[i] || TEACHERS[5];
+    curTeacher = i;
+    $('#dtAv').innerHTML = t.av + '<i class="dot"></i>';
+    $('#dtAv').style.background = t.bg;
+    $('#dtName').textContent = t.name;
+    $('#dtSt').textContent = t.st;
+  }
+
+  /* ---------- 测验逻辑 ---------- */
+  var QUIZ = [
+    {q:'当对方已读不回你的消息时，你的第一反应是？', o:['胡思乱想，反复检查对话记录','先忙自己的，他早晚会回','直接问清楚，不喜欢猜来猜去','假装不在意，其实很在意']},
+    {q:'你们认识到现在，大概多久了？', o:['不到一个月，还在试探','1–6 个月，有点暧昧','半年到两年，稳定但平淡','两年以上，接近老夫老妻']},
+    {q:'他主动约你的频率是？', o:['很少，基本是我在找借口','偶尔，大概五五开','经常，他比我更主动','还没单独约过']},
+    {q:'他跟你聊过未来的具体规划吗？', o:['认真聊过，有时间表','提过，但比较模糊','从没聊过','会回避这类话题']},
+    {q:'这段关系里，你最常有的情绪是？', o:['患得患失，反复猜','踏实安心','猜疑试探，不太信任','习惯将就，懒得折腾']},
+    {q:'如果他此刻表白，你会？', o:['立刻答应，等太久了','答应，但想再观察一阵','犹豫，怕只是暧昧','拒绝，已经下头了']}
+  ];
+  var qzIdx = 0, answers = ['A'];
+  function qzRender(){
+    var q = QUIZ[qzIdx];
+    $('#qzNo').textContent = (qzIdx + 1) + ' / 6';
+    $('#qzQn').textContent = 'Q' + (qzIdx + 1);
+    $('#qzQ').textContent = q.q;
+    $('#qzBar').style.width = ((qzIdx + 1) / 6 * 100) + '%';
+    var sel = answers[qzIdx];
+    $('#qzOpts').innerHTML = q.o.map(function(o, i){
+      var k = 'ABCD'[i];
+      return '<button class="qo' + (sel === k ? ' sel' : '') + '" data-opt="' + k + '"><span>' + k + '</span>' + o + '</button>';
+    }).join('');
+    $('#qzNext').textContent = qzIdx === 5 ? '查看结果' : '下一题';
+  }
+
+  /* ---------- 预约计算 ---------- */
+  var SERVICES = [
+    {n:'深度解析 · 60 分钟', p:68},
+    {n:'单项咨询 · 30 分钟', p:25},
+    {n:'情感合盘 · 双方合参', p:98}
+  ];
+  var bkSel = {svc:0, day:1, time:1, pay:0};
+  function bkRender(){
+    var s = SERVICES[bkSel.svc];
+    var total = Math.max(0, s.p - 10);
+    $('#sumSvc').textContent = s.n;
+    $('#sumPrice').textContent = '¥' + s.p.toFixed(2);
+    $('#sumTotal').textContent = '¥' + total.toFixed(2);
+    $('#payBtn').textContent = '确认支付 ¥' + total.toFixed(2);
+  }
+
+  /* ---------- 聊天 ---------- */
+  var REPLIES = [
+    '从八字上看，你们今年的节奏确实不在同一个频道里，他更多在处理自己的事。',
+    '别急，我先说结论：他对你还有感情，但「确认关系」这件事他在等一个契机。',
+    '建议这个月先别逼答案。把注意力放回自己身上，你的状态好了，选择权就回来了。',
+    '如果一定要一个时间点，我建议看到 11 月中旬，那前后他会有明确态度。',
+    '记住：测算给的是概率和时机，真正的决定权一直在你手里。'
+  ];
+  var replyIdx = 0, ctSec = 12 * 60 + 33, ctTimerInt = null;
+  function sendMsg(text){
+    var body = $('#ctBody');
+    var me = document.createElement('div');
+    me.className = 'msg me';
+    me.innerHTML = '<span class="av">我</span><div class="bub"></div>';
+    me.querySelector('.bub').textContent = text;
+    body.appendChild(me);
+    body.scrollTop = body.scrollHeight;
+    chatPush('me', text);
+    setTimeout(function(){
+      var m = document.createElement('div');
+      m.className = 'msg';
+      m.innerHTML = '<span class="av">子</span><div class="bub"></div>';
+      var reply = REPLIES[replyIdx % REPLIES.length];
+      replyIdx++;
+      m.querySelector('.bub').textContent = reply;
+      body.appendChild(m);
+      body.scrollTop = body.scrollHeight;
+      chatPush('them', reply);
+    }, 900);
+  }
+  function ctStart(){
+    if (ctTimerInt) return;
+    ctTimerInt = setInterval(function(){
+      if (ctSec <= 0) { clearInterval(ctTimerInt); ctTimerInt = null; return; }
+      ctSec--;
+      var m = Math.floor(ctSec / 60), s = ctSec % 60;
+      $('#ctTimer').textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    }, 1000);
+  }
+
+  /* ---------- 呼叫 / 语音 / 视频通话 ---------- */
+  var callMode = 'voice', cgInt = null, cgSec = 2, cgSecInt = null;
+  var vcSec = 0, vcInt = null, vdSec = 0, vdInt = null;
+  function callTeacher(){ return TEACHERS[curTeacher] || TEACHERS[5]; }
+  function fmt(s){ var m = Math.floor(s / 60), x = s % 60; return (m < 10 ? '0' : '') + m + ':' + (x < 10 ? '0' : '') + x; }
+  function callModeLabel(){ return callMode === 'video' ? '视频' : '语音'; }
+  function startCall(mode){
+    callMode = mode === 'video' ? 'video' : 'voice';
+    var t = callTeacher();
+    $('#cgAv').textContent = t.av;
+    $('#cgAv').style.background = t.bg;
+    $('#cgName').textContent = t.name;
+    $('#cgSt').innerHTML = callModeLabel() + '呼叫 · 等待老师接听<span class="d">。</span><span class="d">。</span><span class="d">。</span>';
+    $('#cgSwitch').textContent = callMode === 'video' ? '改用语音呼叫' : '改用视频呼叫';
+    cgSec = 2; $('#cgWait').textContent = '00:02';
+    go('calling');
+    clearInterval(cgSecInt);
+    cgSecInt = setInterval(function(){
+      if (cgSec > 0) { cgSec--; $('#cgWait').textContent = '00:0' + cgSec; }
+    }, 1000);
+    clearTimeout(cgInt);
+    cgInt = setTimeout(function(){ if (curName === 'calling') connectCall(); }, 2400);
+  }
+  function switchCallMode(){
+    callMode = callMode === 'video' ? 'voice' : 'video';
+    $('#cgSt').innerHTML = callModeLabel() + '呼叫 · 等待老师接听<span class="d">。</span><span class="d">。</span><span class="d">。</span>';
+    $('#cgSwitch').textContent = callMode === 'video' ? '改用语音呼叫' : '改用视频呼叫';
+    toast('已切换为' + callModeLabel() + '呼叫');
+  }
+  function connectCall(){
+    clearInterval(cgSecInt); clearTimeout(cgInt);
+    var t = callTeacher();
+    if (callMode === 'video') {
+      $('#vdName').textContent = t.name;
+      vdSec = 0; $('#vdTimer').textContent = '00:00';
+      go('video');
+      clearInterval(vdInt);
+      vdInt = setInterval(function(){ vdSec++; $('#vdTimer').textContent = fmt(vdSec); }, 1000);
+    } else {
+      $('#vcName').textContent = t.name;
+      $('#vcAv').textContent = t.av;
+      $('#vcAv').style.background = t.bg;
+      vcSec = 0; $('#vcTimer').textContent = '00:00';
+      go('voice');
+      clearInterval(vcInt);
+      vcInt = setInterval(function(){ vcSec++; $('#vcTimer').textContent = fmt(vcSec); }, 1000);
+    }
+    toast('老师已接听 · ' + callModeLabel() + '通话开始（演示）');
+  }
+  function endCall(){
+    var sec = callMode === 'video' ? vdSec : vcSec;
+    clearInterval(vcInt); clearInterval(vdInt); clearTimeout(cgInt); clearInterval(cgSecInt);
+    vcInt = vdInt = cgInt = cgSecInt = null;
+    if (stack.length && stack[stack.length - 1] === 'calling') stack.pop();
+    back();
+    toast('通话结束 · 本次 ' + fmt(sec) + ' · 去评价送 5 积分');
+  }
+
+  /* ---------- 事件委托 ---------- */
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-act],[data-opt],[data-lstab],[data-fdtab],[data-fgroup],[data-group],[data-goto]');
+    if (!el) return;
+
+    if (el.hasAttribute('data-goto')) {
+      var g = el.getAttribute('data-goto');
+      if (g.indexOf('modal') === 0 || g.indexOf('sheet') === 0) { openOv(g); var _g1 = $('#curName'); if (_g1) _g1.textContent = PAGES[g]; var _g2 = $('#curNo'); if (_g2) _g2.textContent = '弹层'; }
+      else if (g === 'quiz') { qzIdx = 0; answers = ['A']; qzRender(); go('quiz'); }
+      else go(g);
+      return;
+    }
+
+    var act = el.getAttribute('data-act');
+    if (el.hasAttribute('data-opt')) {
+      answers[qzIdx] = el.getAttribute('data-opt');
+      $$('#qzOpts .qo').forEach(function(b){ b.classList.remove('sel'); });
+      el.classList.add('sel');
+      return;
+    }
+    if (el.hasAttribute('data-lstab')) {
+      $$('.ls-tabs button').forEach(function(b){ b.classList.remove('on'); });
+      el.classList.add('on');
+      lsTab = el.getAttribute('data-lstab');
+      lsRender();
+      return;
+    }
+    if (el.hasAttribute('data-fdtab')) {
+      $$('.fd-tabs button').forEach(function(b){ b.classList.remove('on'); });
+      el.classList.add('on');
+      toast('已切换：' + el.textContent + ' 流');
+      return;
+    }
+    if (el.hasAttribute('data-fgroup')) {
+      var grp = el.getAttribute('data-fgroup');
+      $$('[data-fgroup="' + grp + '"] .dc').forEach(function(b){ b.classList.remove('on'); });
+      el.classList.add('on');
+      fFilter[grp === 'wish' ? 'wish' : 'school'] = parseInt(el.getAttribute('data-i'), 10);
+      return;
+    }
+    if (el.hasAttribute('data-group')) {
+      var g2 = el.getAttribute('data-group');
+      $$('[data-group="' + g2 + '"] .bk-opt, [data-group="' + g2 + '"] .payway').forEach(function(b){ b.classList.remove('on'); });
+      el.classList.add('on');
+      bkSel[g2] = parseInt(el.getAttribute('data-i'), 10);
+      bkRender();
+      return;
+    }
+
+    switch (act) {
+      case 'skip': go('home'); break;
+      case 'tab': go(el.getAttribute('data-to')); break;
+      case 'go':
+        var to = el.getAttribute('data-to');
+        var ti = el.getAttribute('data-teacher');
+        if (to === 'detail' && ti !== null) detailFill(parseInt(ti, 10));
+        if (to === 'list') { lsRender(); }
+        go(to);
+        break;
+      case 'back': back(); break;
+      case 'ov': openOv(el.getAttribute('data-to')); break;
+      case 'ovclose': closeOv(el.closest('.scr').id.replace('scr-', '')); break;
+      case 'toast': toast(el.getAttribute('data-msg')); break;
+      case 'quizstart': qzIdx = 0; answers = ['A']; qzRender(); go('quiz'); break;
+      case 'quiznext':
+        if (!answers[qzIdx]) { toast('先选一个答案吧'); break; }
+        if (qzIdx < 5) { qzIdx++; qzRender(); } else { go('result'); }
+        break;
+      case 'filterapply':
+        closeOv('sheet-filter');
+        lsRender();
+        toast(fFilter.wish || fFilter.school ? '已应用筛选' : '已重置为全部老师');
+        break;
+      case 'pay':
+        ensureAuth(bookingSave, '登录后即可预约并保存订单');
+        break;
+      case 'mood':
+        ensureAuth(moodSave, '登录后即可记录并保存今日心情');
+        break;
+      case 'unlock':
+        ensureAuth(quizSave, '登录后即可保存完整报告');
+        break;
+      case 'mkpost':
+        ensureAuth(function(){ $('#mkMask').classList.add('act'); }, '登录后才能发帖');
+        break;
+      case 'fddlike':
+        var fpid = el.getAttribute('data-id');
+        ensureAuth(function(){ fdLike(fpid); }, '登录后才能点赞');
+        break;
+      case 'openlogin':
+        if (curUser) { toast('已登录：' + (curUser.phoneNumber ? maskPhone(curUser.phoneNumber) : '芳芳用户')); return; }
+        $('#lgMask').classList.add('act');
+        break;
+      case 'lgclose': lgClose(); break;
+      case 'mkclose': $('#mkMask').classList.remove('act'); break;
+      case 'logout':
+        if (!cloudOk) return;
+        Promise.resolve(cloud.auth.signOut()).then(function(){
+          curUser = null; meRefresh(); toast('已退出登录');
+        });
+        break;
+      case 'resetdemo':
+        if (!window.confirm('重置演示数据？\n将清空本机的登录态、帖子、订单、心情等记录，恢复初始演示数据。')) return;
+        try { localStorage.removeItem('ff_live_db_v1'); localStorage.removeItem('ff_live_session_v1'); } catch(e){}
+        location.reload();
+        break;
+      case 'mybookings':
+        ensureAuth(function(){
+          Promise.resolve(cloud.database.from('bookings').select('counselor, book_date, time_slot, amount')
+            .order('created_at', { ascending: false }).limit(10)).then(function(r){
+              if (r && r.error) { toast('加载失败，请重试'); return; }
+              if (!r.data || !r.data.length) { toast('暂无预约，去约一位老师吧'); return; }
+              var b = r.data[0];
+              toast('共 ' + r.data.length + ' 条预约 · 最近：' + b.counselor + ' · ' + b.book_date + ' ' + b.time_slot);
+            });
+        });
+        break;
+      case 'myreports':
+        ensureAuth(function(){
+          Promise.resolve(cloud.database.from('quiz_results').select('quiz_title, result_title, created_at')
+            .order('created_at', { ascending: false }).limit(10)).then(function(r){
+              if (r && r.error) { toast('加载失败，请重试'); return; }
+              if (!r.data || !r.data.length) { toast('暂无报告，先去测一测吧'); return; }
+              toast('共 ' + r.data.length + ' 份报告 · 最近：' + r.data[0].quiz_title);
+            });
+        });
+        break;
+      case 'fav':
+        el.classList.toggle('on');
+        el.querySelector('.fi').textContent = el.classList.contains('on') ? '♥' : '♡';
+        toast(el.classList.contains('on') ? '已收藏' : '已取消收藏');
+        break;
+      case 'like':
+        var liked = el.classList.toggle('liked');
+        var m = el.textContent.match(/\d+/);
+        if (m) el.textContent = (liked ? '👍 ' : '👍 ') + (parseInt(m[0], 10) + (liked ? 1 : -1));
+        break;
+      case 'quick':
+        var qmsg = el.getAttribute('data-msg');
+        ensureAuth(function(){ sendMsg(qmsg); }, '登录后才能开始咨询');
+        break;
+      case 'call':
+        ensureAuth(function(){ startCall('voice'); }, '登录后才能发起连线');
+        break;
+      case 'callvideo':
+        ensureAuth(function(){ startCall('video'); }, '登录后才能发起视频通话');
+        break;
+      case 'callswitch': switchCallMode(); break;
+      case 'callcancel':
+        clearTimeout(cgInt); clearInterval(cgSecInt); cgInt = cgSecInt = null;
+        back(); toast('已取消呼叫');
+        break;
+      case 'vcmute':
+        el.classList.toggle('on');
+        toast(el.classList.contains('on') ? '已静音，对方听不到你' : '已取消静音');
+        break;
+      case 'vcspeaker':
+        el.classList.toggle('on');
+        toast(el.classList.contains('on') ? '免提已开' : '免提已关');
+        break;
+      case 'vcend': case 'vdend': endCall(); break;
+      case 'vdflip':
+        $('#vdPip').classList.toggle('flip');
+        toast($('#vdPip').classList.contains('flip') ? '已切换到后置摄像头' : '已切换到前置摄像头');
+        break;
+      case 'vdbeauty':
+        el.classList.toggle('on');
+        toast(el.classList.contains('on') ? '美颜已开' : '美颜已关');
+        break;
+      case 'plus': toast('＋ 发布：写日记 / 发树洞 / 提问（演示）'); break;
+    }
+  });
+
+  /* 咨询室输入框 */
+  $('#ctInput').addEventListener('keydown', function(e){
+    if (e.key === 'Enter' && this.value.trim()) {
+      var v = this.value.trim();
+      this.value = '';
+      ensureAuth(function(){ sendMsg(v); }, '登录后才能开始咨询');
+    }
+  });
+
+  /* Esc 返回（通话中按 Esc = 挂断） */
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      if (curName === 'voice' || curName === 'video') { endCall(); return; }
+      back();
+    }
+  });
+
+  /* =====================================================
+     本地演示云（LocalCloud）· 数据全部保存在本机 localStorage
+     ===================================================== */
+  var LC_DB_KEY = 'ff_live_db_v1', LC_SESSION_KEY = 'ff_live_session_v1';
+  var DEMO_PHONE = '13800138888';
+  var cloud = null, cloudOk = false, curUser = null;
+  var pendingAfterLogin = null, lgPending = null, lgCooldown = 0, lgCooldownInt = null;
+  var fdLikes = {};
+
+  function lcId(){ return 'lc_' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+  function lcNow(){ return new Date().toISOString(); }
+  function lcGetUser(){
+    try { var raw = localStorage.getItem(LC_SESSION_KEY); return raw ? JSON.parse(raw) : null; } catch(e){ return null; }
+  }
+  function lcSetUser(u){
+    try { u ? localStorage.setItem(LC_SESSION_KEY, JSON.stringify(u)) : localStorage.removeItem(LC_SESSION_KEY); } catch(e){}
+    lcAuthListeners.forEach(function(cb){ try { cb(u ? 'SIGNED_IN' : 'SIGNED_OUT', { user: u }); } catch(e){} });
+  }
+
+  /* ---------- 种子数据（杜撰演示用） ---------- */
+  function lcSeed(){
+    var now = Date.now(), H = 3600000;
+    var raw = [
+      ['小满','和他在一起三年，上周才发现他微信里管别人叫宝贝。今天搬家了，东西不多，一个人搬完了。','心碎夜晚',128,3],
+      ['阿吱','相亲对象问我平时玩什么，我说看书看展。他说：装什么呢。原来正常人也会流入市场。','相亲奇遇',96,9],
+      ['糖分不足','凌晨两点给闺蜜发消息：我觉得我这辈子可能就这样了。她回：起来开门，我带了汤。突然就不想死了。','被接住',215,14],
+      ['匿名用户','妈妈说三十岁不结婚就是失败，可我明明刚升职买了房。为什么我的成就感在她眼里不算成就。','家人',174,20],
+      ['晚风','复合第 47 天。他换了头像，朋友圈公开了我，吵架会先低头了。破镜能重圆，只是裂纹一直在。','复合',88,26],
+      ['momo','体检报告出来，甲状腺结节。第一反应不是怕死，是还好买了保险。成年人的条件反射。','生活',63,31],
+      ['橘子海','分手时他说我太黏人。空窗一年，我学会了做饭健身爬山。现在他回头说还是我好，可我已经不需要他了。','成长',256,38],
+      ['匿名用户','网贷还完了。差 3 万的时候天天想跳，还清那天去吃了碗加蛋的牛肉面，哭着吃完的。','重生',342,45],
+      ['小鹿','暗恋办公室隔壁科室的人半年，今天他离职了。我连他微信都没有。有些喜欢注定烂在工位上。','暗恋',97,52],
+      ['南栀','婆婆把我陪嫁的被子给了小姑子，老公说算了。这不是被子的事，是这个家没人在意我的感受。','婚姻',143,58],
+      ['山城','复读第二年，模考还是离一本线差 12 分。我爸说随便考个算了。我不信，我想再试一次。','学业',76,64],
+      ['布丁','养了 14 年的狗今天回汪星了。它走得很轻，怕吵醒我。这辈子不会再养狗了。','告别',428,70],
+      ['匿名用户','被领导 PUA 半年，今天第一次在会上怼回去了。手在抖，但声音没抖。记录一下我的勇敢。','职场',189,76],
+      ['海盐','网恋八个月，昨天奔现。他比照片里矮，我比照片里胖。我们笑了十分钟然后决定继续处。','网恋',132,82],
+      ['栗子','试管第三次成功了。两只杠的时候老公在厨房砸了个碗，说是听岔了。希望这次能抱住你。','期待',517,88],
+      ['匿名用户','我爸肝癌晚期，今天告诉我存折密码。我记性一直不好，这次一遍就记住了。','家人',604,94],
+      ['青柠','离婚冷静期第 20 天。他搬去客房了，家里突然安静得能听见冰箱声。说不定离了才是解脱。','婚姻',158,100],
+      ['西米','考研二战上岸！查到成绩那刻先给奶奶打了电话。她老年痴呆三年了，但一直记得我要考研。','上岸',486,110],
+      ['匿名用户','28 岁，存款 5 万，无房无车无对象。刷到人均百万的帖子会焦虑，但关掉手机照样把日子过下去了。','平凡',271,120],
+      ['晚安','在这里说了三年的心事，从失恋到结婚到当妈。今天带宝宝来报到，谢谢树洞接住过我。','告别',389,130]
+    ];
+    var posts = raw.map(function(r, i){
+      return { id: 'seed_p' + (i + 1), owner_id: null, owner_name: r[0], content: r[1], mood_tag: r[2], seed_likes: r[3], created_at: new Date(now - r[4] * H).toISOString() };
+    });
+    var likes = [];
+    for (var i = 0; i < 8; i++) {
+      var cnt = 2 + (i * 3) % 5;
+      for (var j = 0; j < cnt; j++) likes.push({ id: lcId(), post_id: 'seed_p' + (i + 1), owner_id: 'seed_u' + (i + j), created_at: new Date(now - (2 + j) * H).toISOString() });
+    }
+    var mood = [];
+    for (var d = 1; d <= 6; d++) {
+      var dd = new Date(now - d * 86400000);
+      var dstr = dd.getFullYear() + '-' + ('0' + (dd.getMonth() + 1)).slice(-2) + '-' + ('0' + dd.getDate()).slice(-2);
+      mood.push({ id: 'seed_m' + d, owner_id: null, mood_date: dstr, score: 58 + ((d * 37) % 33), note: '往日心情记录（演示）', tags: ['演示'], created_at: dd.toISOString() });
+    }
+    return {
+      treehole_posts: posts,
+      treehole_likes: likes,
+      mood_records: mood,
+      quiz_results: [{ id: 'seed_q1', owner_id: null, quiz_title: '暧昧真心指数', result_code: 'AI-78', result_title: '他对你有好感，但仍在观望', answers: { Q1: 'A', Q2: 'B', Q3: 'C', Q4: 'B', Q5: 'A', Q6: 'B' }, created_at: new Date(now - 5 * 86400000).toISOString() }],
+      bookings: [{ id: 'seed_b1', owner_id: null, counselor: '林子灵', service: '单项咨询 · 30 分钟', book_date: '明天 10-25', time_slot: '21:00', amount: 25, created_at: new Date(now - 2 * 86400000).toISOString() }],
+      chat_messages: [
+        { id: 'seed_c1', room: 'lingzi', role: 'ta', content: '你好呀，我是子灵 🌙 先深呼吸几次，我们慢慢说。今天想聊什么？', owner_id: null, created_at: new Date(now - 30 * 60000).toISOString() },
+        { id: 'seed_c2', room: 'lingzi', role: 'ta', content: '如果是感情的事，可以先告诉我：你们现在是什么阶段？', owner_id: null, created_at: new Date(now - 28 * 60000).toISOString() },
+        { id: 'seed_c3', room: 'lingzi', role: 'me', content: '刚吵完架，不知道要不要分手', owner_id: null, created_at: new Date(now - 26 * 60000).toISOString() },
+        { id: 'seed_c4', room: 'lingzi', role: 'ta', content: '我在听。把吵架的经过说给我吧，不用组织语言，怎么说都行。', owner_id: null, created_at: new Date(now - 25 * 60000).toISOString() }
+      ]
+    };
+  }
+  function lcLoad(){
+    try {
+      var raw = localStorage.getItem(LC_DB_KEY);
+      if (raw) { var db = JSON.parse(raw); if (db && db.treehole_posts) return db; }
+    } catch(e){}
+    var db = lcSeed();
+    try { localStorage.setItem(LC_DB_KEY, JSON.stringify(db)); } catch(e){}
+    return db;
+  }
+  function lcSave(db){ try { localStorage.setItem(LC_DB_KEY, JSON.stringify(db)); } catch(e){} }
+
+  /* ---------- 用户私有表（查询时自动按登录用户过滤，种子记录 owner_id=null 人人可见） ---------- */
+  var LC_USER_TABLES = { mood_records: 1, quiz_results: 1, bookings: 1, chat_messages: 1, treehole_likes: 1 };
+  var lcAuthListeners = [];
+
+  function LCQuery(table){
+    this.t = table; this.ops = []; this._limit = 100; this._write = null;
+  }
+  LCQuery.prototype.select = function(){ return this; };
+  LCQuery.prototype.eq = function(col, val){ this.ops.push({ type: 'eq', col: col, val: val }); return this; };
+  LCQuery.prototype.order = function(col, opt){ this.ops.push({ type: 'order', col: col, asc: !(opt && opt.ascending === false) }); return this; };
+  LCQuery.prototype.limit = function(n){ this._limit = n; return this; };
+  LCQuery.prototype.insert = function(rows){ this._write = { type: 'insert', rows: rows }; return this; };
+  LCQuery.prototype.update = function(vals){ this._write = { type: 'update', vals: vals }; return this; };
+  LCQuery.prototype.delete = function(){ this._write = { type: 'delete' }; return this; };
+  LCQuery.prototype._match = function(db){
+    var self = this, arr = (db[self.t] || []).slice(), user = lcGetUser();
+    if (LC_USER_TABLES[self.t]) {
+      arr = arr.filter(function(r){ return r.owner_id == null || (user && String(r.owner_id) === String(user.id)); });
+    }
+    self.ops.forEach(function(op){
+      if (op.type === 'eq') arr = arr.filter(function(r){ return String(r[op.col]) === String(op.val); });
+    });
+    return arr;
+  };
+  LCQuery.prototype._sort = function(arr){
+    var self = this;
+    self.ops.forEach(function(op){
+      if (op.type !== 'order') return;
+      arr.sort(function(a, b){
+        var x = a[op.col], y = b[op.col];
+        return op.asc ? (x > y ? 1 : x < y ? -1 : 0) : (x < y ? 1 : x > y ? -1 : 0);
+      });
+    });
+    return arr;
+  };
+  LCQuery.prototype.then = function(res, rej){
+    var self = this;
+    return Promise.resolve().then(function(){
+      var db = lcLoad(), out;
+      if (self._write) {
+        var user = lcGetUser();
+        if (self._write.type === 'insert') {
+          var rows = Array.isArray(self._write.rows) ? self._write.rows : [self._write.rows];
+          out = rows.map(function(r){
+            var row = Object.assign({}, r);
+            row.id = row.id || lcId();
+            row.created_at = row.created_at || lcNow();
+            if ((LC_USER_TABLES[self.t] || self.t === 'treehole_posts') && user) {
+              if (row.owner_id == null) row.owner_id = user.id;
+              if (row.owner_name == null) row.owner_name = user.name;
+            }
+            if (self.t === 'treehole_posts' && row.seed_likes == null) row.seed_likes = 0;
+            (db[self.t] = db[self.t] || []).push(row);
+            return row;
+          });
+        } else if (self._write.type === 'update') {
+          var m = self._match(db);
+          out = [];
+          m.forEach(function(r){ Object.assign(r, self._write.vals); out.push(r); });
+        } else {
+          var dm = self._match(db);
+          db[self.t] = (db[self.t] || []).filter(function(r){ return dm.indexOf(r) < 0; });
+          out = [];
+        }
+        lcSave(db);
+        return { data: out, error: null };
+      }
+      out = self._sort(self._match(db)).slice(0, self._limit);
+      return { data: out, error: null };
+    }).then(res, rej);
+  };
+  LCQuery.prototype.maybeSingle = function(){
+    var self = this;
+    return Promise.resolve().then(function(){
+      var db = lcLoad();
+      var arr = self._sort(self._match(db)).slice(0, 1);
+      return { data: arr[0] || null, error: null };
+    });
+  };
+
+  var LocalCloud = {
+    auth: {
+      onAuthStateChange: function(cb){ lcAuthListeners.push(cb); },
+      getSession: function(){ return Promise.resolve({ data: { user: lcGetUser() } }); },
+      sendOtp: function(o){ return Promise.resolve({ data: { verificationId: 'v_' + lcId(), isExistingUser: false } }); },
+      verifyOtp: function(o){
+        var user = { id: 'u_' + o.phone, phoneNumber: o.phone, name: '芳芳用户' + String(o.phone).slice(-4) };
+        lcSetUser(user);
+        return Promise.resolve({ data: { user: user } });
+      },
+      signInWithOAuth: function(){ return Promise.resolve({ error: { message: '演示模式：请用手机号登录（任意号码 + 任意 6 位验证码）' } }); },
+      signOut: function(){ lcSetUser(null); return Promise.resolve({ data: null }); }
+    },
+    database: { from: function(t){ return new LCQuery(t); } }
+  };
+
+  function cloudInit(){
+    try {
+      cloud = LocalCloud;
+      cloudOk = true;
+      cloud.auth.onAuthStateChange(function(ev, s){
+        curUser = (s && s.user) ? s.user : null;
+        meRefresh();
+        if (curName === 'treehole') fdLoad();
+      });
+    } catch (e) { cloudOk = false; }
+  }
+
+  /* 微信登录回调分发（必须在路由守卫前处理，code 一次性） */
+  function authBootstrap(){
+    if (!cloudOk) return;
+    var url;
+    try { url = new URL(location.href); } catch (e) { return; }
+    if (!url.searchParams.has('code') && !url.searchParams.has('error')) return;
+    var provider = url.searchParams.get('provider');
+    if (provider !== 'wechat') return;
+    var h = cloud.auth.handleWechatWebCallback;
+    if (typeof h !== 'function') return;
+    Promise.resolve(h.call(cloud.auth)).then(function(r){
+      if (r && r.error) { toast('微信登录失败：' + (r.error.message || '请重新登录')); return; }
+      if (r && r.data) {
+        ['code','state','provider'].forEach(function(k){ url.searchParams.delete(k); });
+        history.replaceState(null, '', url.pathname + url.search + url.hash);
+        toast('微信登录成功');
+      }
+    });
+  }
+
+  function sessionRestore(){
+    if (!cloudOk) return;
+    Promise.resolve(cloud.auth.getSession()).then(function(r){
+      if (r && !r.error && r.data && r.data.user) { curUser = r.data.user; meRefresh(); }
+    });
+  }
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function maskPhone(p){ return p ? p.substr(0,3) + '****' + p.substr(7) : ''; }
+  function userName(){ return (curUser && curUser.name) ? curUser.name : null; }
+  function fdTime(iso){
+    var d = new Date(iso), now = new Date(), diff = (now - d) / 1000;
+    if (diff < 60) return '刚刚';
+    if (diff < 3600) return Math.floor(diff / 60) + '分钟前';
+    if (diff < 86400) return Math.floor(diff / 3600) + '小时前';
+    return Math.floor(diff / 86400) + '天前';
+  }
+
+  /* ---------- 我的页 · 登录态 ---------- */
+  function meRefresh(){
+    var nm = $('#meName'), sub = $('#meSub'), tag = $('#meLoginTag'), cl = $('#meCloud'), out = $('#meOut');
+    if (!nm) return;
+    if (curUser) {
+      nm.textContent = curUser.phoneNumber ? maskPhone(curUser.phoneNumber) : (curUser.name || '芳芳用户');
+      sub.textContent = '演示账号 · 数据保存在本机';
+      if (tag) tag.style.display = 'none';
+      if (cl) cl.style.display = 'flex';
+      if (out) out.style.display = 'block';
+      if ($('#meReset')) $('#meReset').style.display = 'block';
+    } else {
+      nm.textContent = '点击登录';
+      sub.textContent = '登录后同步心情 · 预约 · 报告';
+      if (tag) tag.style.display = 'grid';
+      if (cl) cl.style.display = 'none';
+      if (out) out.style.display = 'none';
+      if ($('#meReset')) $('#meReset').style.display = 'none';
+    }
+  }
+
+  /* ---------- 认证门禁 ---------- */
+  function ensureAuth(after, tip){
+    if (!cloudOk) { toast('演示数据未就绪，请刷新重试'); return; }
+    if (curUser) { after(); return; }
+    pendingAfterLogin = after || null;
+    $('#lgMask').classList.add('act');
+    $('#lgErr').textContent = tip || '请先登录，登录后自动继续';
+  }
+  function lgClose(){ $('#lgMask').classList.remove('act'); $('#lgErr').textContent = ''; }
+  function lgErr(msg){ $('#lgErr').textContent = msg || ''; }
+
+  $('#lgSend').addEventListener('click', function(){
+    var phone = $('#lgPhone').value.replace(/\s+/g, '');
+    if (!/^1\d{10}$/.test(phone)) { lgErr('请输入正确的 11 位手机号'); return; }
+    if (lgCooldown > 0 || !cloudOk) return;
+    var btn = this;
+    btn.disabled = true; btn.textContent = '发送中…';
+    lgErr('');
+    Promise.resolve(cloud.auth.sendOtp({ phone: phone })).then(function(r){
+      if (r && r.error) { btn.disabled = false; btn.textContent = '获取验证码'; lgErr(r.error.message || '验证码发送失败，请稍后再试'); return; }
+      lgPending = { phone: phone, verificationId: r.data.verificationId, isExistingUser: r.data.isExistingUser };
+      toast('验证码已发送（演示：任意 6 位数字）');
+      lgCooldown = 60;
+      btn.textContent = lgCooldown + 's 后重发';
+      clearInterval(lgCooldownInt);
+      lgCooldownInt = setInterval(function(){
+        lgCooldown--;
+        if (lgCooldown <= 0) { clearInterval(lgCooldownInt); btn.disabled = false; btn.textContent = '获取验证码'; }
+        else btn.textContent = lgCooldown + 's 后重发';
+      }, 1000);
+    });
+  });
+
+  $('#lgBtn').addEventListener('click', function(){
+    var phone = $('#lgPhone').value.replace(/\s+/g, '');
+    var code = $('#lgCode').value.replace(/\s+/g, '');
+    if (!/^1\d{10}$/.test(phone)) { lgErr('请输入正确的 11 位手机号'); return; }
+    if (!/^\d{6}$/.test(code)) { lgErr('请输入 6 位验证码'); return; }
+    if (!lgPending || lgPending.phone !== phone) { lgErr('请先获取验证码'); return; }
+    var btn = this;
+    btn.disabled = true; btn.textContent = '登录中…';
+    Promise.resolve(cloud.auth.verifyOtp({
+      phone: lgPending.phone,
+      verificationId: lgPending.verificationId,
+      isExistingUser: lgPending.isExistingUser,
+      token: code
+    })).then(function(r){
+      btn.disabled = false; btn.textContent = '登 录';
+      if (r && r.error) { lgErr(r.error.message || '验证码错误，请重试'); return; }
+      lgPending = null; $('#lgCode').value = '';
+      lgClose();
+      toast('登录成功，欢迎回来');
+      var fn = pendingAfterLogin; pendingAfterLogin = null;
+      if (fn) setTimeout(fn, 300);
+    });
+  });
+
+  $('#lgWx').addEventListener('click', function(){
+    var btn = this;
+    btn.disabled = true; btn.textContent = '登录中…';
+    Promise.resolve(cloud.auth.verifyOtp({ phone: DEMO_PHONE, verificationId: 'demo', isExistingUser: true, token: '000000' })).then(function(r){
+      btn.disabled = false; btn.textContent = '演示账号一键登录';
+      if (r && r.error) { lgErr(r.error.message || '登录失败'); return; }
+      lgPending = null; $('#lgCode').value = '';
+      lgClose();
+      toast('已进入演示账号');
+      var fn = pendingAfterLogin; pendingAfterLogin = null;
+      if (fn) setTimeout(fn, 300);
+    });
+  });
+
+  /* ---------- 心情记录（mood_records · 用户私有） ---------- */
+  function todayStr(){
+    var d = new Date();
+    return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  }
+  function moodSave(){
+    var d = todayStr();
+    Promise.resolve(cloud.database.from('mood_records').select('id').eq('mood_date', d).maybeSingle()).then(function(r){
+      if (r.data && r.data.id) {
+        return cloud.database.from('mood_records').update({ score: 89, note: '今日心情打卡（原型演示）' }).eq('id', r.data.id).select();
+      }
+      var row = { mood_date: d, score: 89, note: '今日心情打卡（原型演示）', tags: ['原型演示'] };
+      if (userName()) row.owner_name = userName();
+      return cloud.database.from('mood_records').insert(row).select();
+    }).then(function(r){
+      if (r && r.error) { toast('记录失败：' + (r.error.message || '请重试')); return; }
+      toast('今日心情已记录：😊 89 分（已存本机）');
+      cdLoad();
+    }).catch(function(){ toast('网络繁忙，心情记录失败'); });
+  }
+  function cdLoad(){
+    if (!cloudOk || !curUser) return;
+    var d = todayStr();
+    Promise.resolve(cloud.database.from('mood_records').select('id, score').eq('mood_date', d).maybeSingle()).then(function(r){
+      var btn = $('.cd-write');
+      if (!btn) return;
+      if (r && r.data && r.data.id) btn.textContent = '✓ 今日已记录 ' + r.data.score + ' 分 · 点击更新';
+      else btn.textContent = '✏️ 记录今日心情';
+    });
+  }
+
+  /* ---------- 测验结果（quiz_results · 用户私有） ---------- */
+  function quizSave(){
+    var answersObj = {};
+    answers.forEach(function(v, i){ answersObj['Q' + (i + 1)] = v; });
+    var row = {
+      quiz_title: '暧昧真心指数',
+      result_code: 'AI-78',
+      result_title: '他对你有好感，但仍在观望',
+      answers: answersObj
+    };
+    if (userName()) row.owner_name = userName();
+    Promise.resolve(cloud.database.from('quiz_results').insert(row).select()).then(function(r){
+      if (r && r.error) { toast('保存失败：' + (r.error.message || '请重试')); return; }
+      toast('报告已保存 · 我的报告可查看');
+    });
+  }
+
+  /* ---------- 预约订单（bookings · 用户私有） ---------- */
+  function bookingSave(){
+    var s = SERVICES[bkSel.svc];
+    var days = ['今天 10-24', '明天 10-25', '后天 10-26'];
+    var times = ['20:00', '21:00', '22:00', '22:30'];
+    var total = Math.max(0, s.p - 10);
+    var row = {
+      counselor: TEACHERS[curTeacher].name,
+      service: s.n,
+      book_date: days[bkSel.day],
+      time_slot: times[bkSel.time],
+      amount: total
+    };
+    if (userName()) row.owner_name = userName();
+    Promise.resolve(cloud.database.from('bookings').insert(row).select()).then(function(r){
+      if (r && r.error) { toast('订单创建失败：' + (r.error.message || '请重试')); return; }
+      toast('支付成功 · 订单已生成');
+      closeOv('booking');
+      go('chat');
+      ctStart();
+    });
+  }
+
+  /* ---------- 咨询室聊天（chat_messages · 用户私有） ---------- */
+  function chatPush(role, content){
+    if (!cloudOk || !curUser) return;
+    var row = { room: 'lingzi', role: role, content: content };
+    if (userName()) row.owner_name = userName();
+    Promise.resolve(cloud.database.from('chat_messages').insert(row)).then(function(r){
+      if (r && r.error) console.warn('chat persist failed');
+    });
+  }
+  function ctLoad(){
+    if (!cloudOk || !curUser) return;
+    Promise.resolve(cloud.database.from('chat_messages').select('role, content, created_at')
+      .eq('room', 'lingzi').order('created_at', { ascending: true }).limit(30)).then(function(r){
+        if (r && r.error) return;
+        if (!r.data || !r.data.length) return;
+        var body = $('#ctBody');
+        $$('.msg', body).forEach(function(m){ m.remove(); });
+        r.data.forEach(function(m){
+          var d = document.createElement('div');
+          d.className = 'msg' + (m.role === 'me' ? ' me' : '');
+          d.innerHTML = '<span class="av">' + (m.role === 'me' ? '我' : '子') + '</span><div class="bub"></div>';
+          d.querySelector('.bub').textContent = m.content;
+          body.appendChild(d);
+        });
+        body.scrollTop = body.scrollHeight;
+      });
+  }
+
+  /* ---------- 树洞社区（treehole_posts 公开读 / treehole_likes） ---------- */
+  function fdLoad(){
+    if (!cloudOk) return;
+    var qPosts = cloud.database.from('treehole_posts')
+      .select('id, owner_id, owner_name, content, mood_tag, seed_likes, created_at')
+      .order('created_at', { ascending: false }).limit(30);
+    var qLikes = cloud.database.from('treehole_likes').select('post_id');
+    Promise.all([Promise.resolve(qPosts), Promise.resolve(qLikes)]).then(function(rs){
+      var posts = (rs[0] && !rs[0].error && rs[0].data) || [];
+      var likeRows = (rs[1] && !rs[1].error && rs[1].data) || [];
+      fdLikes = {};
+      var likeCount = {};
+      likeRows.forEach(function(l){
+        likeCount[String(l.post_id)] = (likeCount[String(l.post_id)] || 0) + 1;
+        if (curUser && String(l.owner_id) === String(curUser.id)) fdLikes[String(l.post_id)] = true;
+      });
+      fdRender(posts, likeCount);
+    }).catch(function(){});
+  }
+  function fdRender(posts, likeCount){
+    var body = $('#scr-treehole .fd-body');
+    if (!body) return;
+    var mk = $('.fd-mk', body);
+    $$('.fd-post', body).forEach(function(p){ p.remove(); });
+    var note = $('.fd-cloud-note', body);
+    if (!note) {
+      note = document.createElement('div');
+      note.className = 'fd-cloud-note';
+      mk.parentNode.insertBefore(note, mk.nextSibling);
+    }
+    if (!posts.length) {
+      note.textContent = '云端暂无帖子，来发布第一条吧';
+      return;
+    }
+    note.textContent = '📱 演示社区 · 共 ' + posts.length + ' 条';
+    var html = posts.map(function(p){
+      var liked = fdLikes[String(p.id)];
+      var cnt = (p.seed_likes || 0) + (likeCount[String(p.id)] || 0);
+      var mine = curUser && p.owner_id && String(p.owner_id) === String(curUser.id);
+      var av = esc((p.owner_name || '匿').charAt(0));
+      return '<div class="fd-post">' +
+        '<div class="p-hd"><span class="p-av">' + av + '</span><div><b>' + esc(p.owner_name || '匿名用户') + (mine ? '<span class="fd-mine">我的</span>' : '') + '</b><small>' + fdTime(p.created_at) + '</small></div><i>···</i></div>' +
+        '<p>' + esc(p.content) + '</p>' +
+        (p.mood_tag ? '<div class="p-tag"># ' + esc(p.mood_tag) + '</div>' : '') +
+        '<div class="p-ft"><button class="' + (liked ? 'liked' : '') + '" data-act="fddlike" data-id="' + p.id + '">👍 ' + cnt + '</button>' +
+        '<button data-act="toast" data-msg="评论区：原型从简">💬 0</button>' +
+        '<button data-act="toast" data-msg="分享面板：原型从简">↗ 分享</button></div></div>';
+    }).join('');
+    mk.insertAdjacentHTML('afterend', html);
+  }
+  function fdLike(pid){
+    var liked = fdLikes[String(pid)];
+    var q = liked
+      ? cloud.database.from('treehole_likes').delete().eq('post_id', pid)
+      : cloud.database.from('treehole_likes').insert({ post_id: pid });
+    Promise.resolve(q).then(function(r){
+      if (r && r.error) { toast('操作失败：' + (r.error.message || '请重试')); return; }
+      if (liked) delete fdLikes[String(pid)]; else fdLikes[String(pid)] = true;
+      fdLoad();
+      toast(liked ? '已取消点赞' : '点赞成功');
+    });
+  }
+
+  /* 发帖层 */
+  $('#mkGo').addEventListener('click', function(){
+    var text = $('#mkText').value.trim();
+    if (text.length < 2) { toast('再多写几个字吧'); return; }
+    var btn = this;
+    btn.disabled = true; btn.textContent = '发布中…';
+    var row = { content: text };
+    var tag = $('#mkTag').value.trim();
+    if (tag) row.mood_tag = tag;
+    if (userName()) row.owner_name = userName();
+    Promise.resolve(cloud.database.from('treehole_posts').insert(row).select()).then(function(r){
+      btn.disabled = false; btn.textContent = '发布';
+      if (r && r.error) { toast('发布失败：' + (r.error.message || '请重试')); return; }
+      $('#mkText').value = ''; $('#mkTag').value = '';
+      $('#mkMask').classList.remove('act');
+      toast('已发布到树洞 📱');
+      fdLoad();
+    });
+  });
+
+  /* ---------- 重置（扩展：清理登录层） ---------- */
+  $('#resetBtn').addEventListener('click', function(){
+    stack = []; curTab = 'home'; qzIdx = 0; answers = ['A']; fFilter = {wish:0, school:0};
+    ctSec = 12 * 60 + 33; $('#ctTimer').textContent = '12:33';
+    $$('.scr').forEach(function(s){ if (s.getAttribute('data-ov')) s.classList.remove('act'); });
+    $('#lgMask').classList.remove('act');
+    $('#mkMask').classList.remove('act');
+    show('splash');
+    toast('已重置，重新体验开屏 →');
+  });
+
+  /* ---------- 启动（支持 ?goto= 深链直达） ---------- */
+  cloudInit();
+  authBootstrap();
+  sessionRestore();
+  meRefresh();
+  lsRender();
+  qzRender();
+  bkRender();
+  var g0 = null;
+  try { g0 = new URLSearchParams(location.search).get('goto'); } catch (e) {}
+  if (g0 && PAGES[g0]) {
+    if (g0.indexOf('modal') === 0 || g0.indexOf('sheet') === 0) {
+      show('home'); openOv(g0);
+      var _g1 = $('#curName'); if (_g1) _g1.textContent = PAGES[g0];
+      var _g2 = $('#curNo'); if (_g2) _g2.textContent = '弹层';
+    } else if (['home','disc','msg','me'].indexOf(g0) >= 0) {
+      curTab = g0; stack = [g0]; show(g0);
+    } else {
+      stack = ['home']; show(g0);
+    }
+  } else {
+    show('splash');
+    setTimeout(function(){ if (curName === 'splash') go('home'); }, 1800);
+  }
+
+  /* ---------- 成品模式：仅保留手机舞台，桌面上居中显示手机 ---------- */
+  (function(){
+    var phone = document.querySelector('#proto .phone');
+    if (!phone) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'pouter';
+    wrap.appendChild(phone);
+    document.body.innerHTML = '';
+    document.body.appendChild(wrap);
+    document.body.classList.add('app-mode');
+    try {
+      var pwa = navigator.standalone || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+      if (pwa) document.body.classList.add('pwa');
+    } catch(e){}
+  })();
+
+  /* ---------- PWA：注册 Service Worker（可离线打开） ---------- */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('sw.js').catch(function(){});
+    });
+  }
+})();
+
+</script>
+</body>
+</html>
