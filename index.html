@@ -638,10 +638,24 @@ body.app-mode .pouter{width:395px;height:834px;transform:none;margin:0;flex-shri
 body.app-mode .phone{position:relative;transform:none;box-shadow:0 30px 90px rgba(0,0,0,.55)}
 body.pwa .sb,body.pwa .hi{display:none}
 @media (max-width:520px){
-  body.app-mode .pouter{width:100vw;height:100vh;height:100dvh}
-  body.app-mode .phone{width:100%;height:100%;border-radius:0;padding:0;box-shadow:none}
-  body.app-mode .scr{border-radius:0}
+  /* 真机：屏幕多大就多大，绝不写死 373×812（安卓常见 360/412 宽，写死会右侧被裁） */
+  html,body{max-width:100%;overflow-x:hidden}
+  body.app-mode .pouter{width:100vw;max-width:100vw;height:100vh;height:100dvh;overflow:hidden}
+  body.app-mode .phone{width:100%;height:100%;border-radius:0;padding:0;box-shadow:none;overflow:hidden}
+  body.app-mode .scr{width:100%;height:100%;border-radius:0}
   body.app-mode .phone::after{display:none}
+  /* 底部导航避开安卓/iOS 手势条 */
+  body.app-mode .nav{padding-bottom:env(safe-area-inset-bottom,0px)}
+  /* 刘海/挖孔屏：顶部标题栏避开状态栏 */
+  body.app-mode .hd{padding-top:env(safe-area-inset-top,0px)}
+}
+@media (max-width:340px){
+  body.app-mode{font-size:14px}
+}
+/* 系统开启「减少动态效果」时不做位移动画，避免低端机身卡在首帧导致整屏偏移 */
+@media (prefers-reduced-motion:reduce){
+  .scr.anime,.scr.anime-back{animation:none!important}
+  *{scroll-behavior:auto!important}
 }
 </style>
 </head>
@@ -719,7 +733,7 @@ body.pwa .sb,body.pwa .hi{display:none}
             <div class="hm-top">
               <div class="hm-brandrow">
                 <div class="hm-logo"><span class="lm">芳</span><div><b>芳芳</b><small>答疑解惑 · 抚慰人心</small></div></div>
-                <button class="hm-mascot" data-act="ov" data-to="free" style="width:54px;height:60px">
+                <button class="hm-mascot" data-act="ov" data-to="modal-free" style="width:54px;height:60px">
                   <svg viewBox="0 0 120 132" width="54" height="60">
                     <path d="M60 8 86 46H34z" fill="#FFD66B"/><ellipse cx="60" cy="47" rx="27" ry="6.5" fill="#F2BE4B"/>
                     <rect x="37" y="50" width="46" height="42" rx="19" fill="#fff"/>
@@ -742,10 +756,10 @@ body.pwa .sb,body.pwa .hi{display:none}
                 <button class="hm-card green" data-act="toast" data-msg="八字排盘：需登录后查看（演示）"><b>八字排盘</b><small>免费检视八字神煞</small><i>☯</i></button>
               </div>
               <div class="hm-grid">
-                <button class="hg" data-act="ov" data-to="quiz"><span class="hgi">📝</span><small>测试</small></button>
+                <button class="hg" data-act="ov" data-to="modal-quiz"><span class="hgi">📝</span><small>测试</small></button>
                 <button class="hg" data-act="go" data-to="list"><span class="hgi">🃏</span><small>塔罗</small></button>
                 <button class="hg" data-act="go" data-to="list"><span class="hgi">🔭</span><small>星盘</small></button>
-                <button class="hg" data-act="ov" data-to="quiz"><span class="hgi">🎲</span><small>趣味</small><i class="nb">NEW</i></button>
+                <button class="hg" data-act="ov" data-to="modal-quiz"><span class="hgi">🎲</span><small>趣味</small><i class="nb">NEW</i></button>
                 <button class="hg" data-act="toast" data-msg="祈福模块：原型从简"><span class="hgi">🙏</span><small>祈福</small></button>
                 <button class="hg" data-act="go" data-to="list"><span class="hgi">💬</span><small>心理</small></button>
               </div>
@@ -965,7 +979,7 @@ body.pwa .sb,body.pwa .hi{display:none}
           <!-- 08 咨询师列表 -->
           <div class="scr ls" id="scr-list">
             <div class="ls-tabs">
-              <button data-act="ov" data-to="filter">筛选 ▾</button>
+              <button data-act="ov" data-to="sheet-filter">筛选 ▾</button>
               <button class="on" data-lstab="star">星级名师</button>
               <button data-lstab="love">婚姻情感</button>
               <button data-lstab="tarot">塔罗占星</button>
@@ -1750,8 +1764,16 @@ body.pwa .sb,body.pwa .hi{display:none}
     if (['home','disc','msg','me'].indexOf(prev) >= 0) curTab = prev;
     show(prev, 'back');
   }
-  function openOv(id){ $('#scr-' + id).classList.add('act'); }
-  function closeOv(id){ $('#scr-' + id).classList.remove('act'); }
+  /* 弹层：容错 id 别名 + 判空，任何情况下都不抛异常打断点击 */
+  var OV_ALIAS = { free:'modal-free', filter:'sheet-filter', quiz:'modal-quiz' };
+  function ovEl(id){
+    var e1 = $('#scr-' + id);
+    if (e1) return e1;
+    var a1 = OV_ALIAS[id];
+    return a1 ? $('#scr-' + a1) : null;
+  }
+  function openOv(id){ var e = ovEl(id); if (e) { e.classList.add('act'); } else if (window.console) { console.warn('[ov] 未找到弹层:', id); } }
+  function closeOv(id){ var e = ovEl(id) || $('#scr-' + id); if (e) e.classList.remove('act'); }
 
   /* ---------- 咨询师数据 ---------- */
   var TEACHERS = [
@@ -1829,7 +1851,8 @@ body.pwa .sb,body.pwa .hi{display:none}
   ];
   var bkSel = {svc:0, day:1, time:1, pay:0};
   function bkRender(){
-    var s = SERVICES[bkSel.svc];
+    if (![0,1,2].includes(bkSel.svc)) bkSel.svc = 0;
+    var s = SERVICES[bkSel.svc] || SERVICES[0];
     var total = Math.max(0, s.p - 10);
     $('#sumSvc').textContent = s.n;
     $('#sumPrice').textContent = '¥' + s.p.toFixed(2);
@@ -1937,7 +1960,7 @@ body.pwa .sb,body.pwa .hi{display:none}
 
   /* ---------- 事件委托 ---------- */
   document.addEventListener('click', function(e){
-    var el = e.target.closest('[data-act],[data-opt],[data-lstab],[data-fdtab],[data-fgroup],[data-group],[data-goto]');
+    var el = e.target.closest('[data-act],[data-opt],[data-lstab],[data-fdtab],[data-i],[data-goto],[data-fgroup],[data-group]');
     if (!el) return;
 
     if (el.hasAttribute('data-goto')) {
@@ -1968,20 +1991,27 @@ body.pwa .sb,body.pwa .hi{display:none}
       toast('已切换：' + el.textContent + ' 流');
       return;
     }
-    if (el.hasAttribute('data-fgroup')) {
-      var grp = el.getAttribute('data-fgroup');
-      $$('[data-fgroup="' + grp + '"] .dc').forEach(function(b){ b.classList.remove('on'); });
-      el.classList.add('on');
-      fFilter[grp === 'wish' ? 'wish' : 'school'] = parseInt(el.getAttribute('data-i'), 10);
-      return;
-    }
-    if (el.hasAttribute('data-group')) {
-      var g2 = el.getAttribute('data-group');
-      $$('[data-group="' + g2 + '"] .bk-opt, [data-group="' + g2 + '"] .payway').forEach(function(b){ b.classList.remove('on'); });
-      el.classList.add('on');
-      bkSel[g2] = parseInt(el.getAttribute('data-i'), 10);
-      bkRender();
-      return;
+    /* 选项组：真正被点的是带 data-i 的子按钮，组属性在父容器上 */
+    if (el.hasAttribute('data-i') && !el.hasAttribute('data-act')) {
+      var box = el.closest('[data-fgroup],[data-group]');
+      var iv = parseInt(el.getAttribute('data-i'), 10);
+      if (box && isFinite(iv)) {
+        var fk = box.getAttribute('data-fgroup');
+        var gk = box.getAttribute('data-group');
+        if (fk) {
+          $$('[data-fgroup="' + fk + '"] .dc').forEach(function(x){ x.classList.remove('on'); });
+          el.classList.add('on');
+          fFilter[fk === 'wish' ? 'wish' : 'school'] = iv;
+          return;
+        }
+        if (gk) {
+          $$('[data-group="' + gk + '"] .bk-opt, [data-group="' + gk + '"] .payway').forEach(function(x){ x.classList.remove('on'); });
+          el.classList.add('on');
+          bkSel[gk] = iv;
+          bkRender();
+          return;
+        }
+      }
     }
 
     switch (act) {
@@ -2687,7 +2717,9 @@ body.pwa .sb,body.pwa .hi{display:none}
   /* ---------- PWA：注册 Service Worker（可离线打开） ---------- */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function(){
-      navigator.serviceWorker.register('sw.js').catch(function(){});
+      navigator.serviceWorker.register('sw.js').then(function(reg){
+        try { reg.update(); } catch(e){}
+      }).catch(function(){});
     });
   }
 })();
